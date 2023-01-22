@@ -22,33 +22,42 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
 }
 
 #title {
     color: white;
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin-left: 20px;
 }
 
 
 #search-bar {
-    position: relative; /* add this */
+    position: relative;
     margin-right: 20px;
 }
 
 #search-bar input {
+    font-size: 14px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: white;
     border: none;
     border-radius: 30px;
     padding: 8px;
-    
-    
-    background-image: url('Icons/search.png'); /* set the path to the icon */
-    background-size: 23px 23px; /* adjust the size of the icon */
-    background-position: left center; /* position the icon on the left side of the input */
+
+
+    background-image: url('Icons/search.png');
+    /* set the path to the icon */
+    background-size: 23px 23px;
+    /* adjust the size of the icon */
+    background-position: left center;
+    /* position the icon on the left side of the input */
     background-position: 6px;
-    background-repeat: no-repeat; /* prevent the icon from repeating */
-    padding-left: 40px; 
+    /* offsets icon from left of field */
+    background-repeat: no-repeat;
+    /* prevent the icon from repeating */
+    padding-left: 40px;
 }
 
 
@@ -83,8 +92,9 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.button:hover { 
+
+.button:hover {
     background-color: #1E90FF;
     color: white;
     transform: scale(1.1);
-    }
+}
