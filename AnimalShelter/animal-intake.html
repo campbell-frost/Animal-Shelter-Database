@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Animal Intake</title>
+        <link rel="stylesheet" type="text/css" href="animal-intake.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-tuGq0nBzUZkXYfZ6h/gXf9JK5vIkgc/OFrwjO46g8NpswU+c/eVjB1jTA9x2JNx2mjBw+E/CkGfgnQ/Fh0J2QgA==" crossorigin="anonymous" />
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <h1> Animal Intake </h1>
+    
+    <body>
+        <div class="information">
+            <form action="">
+                <label>Intake Number: </label><br>
+                <label>Date: </label>
+                <input type="text" id="current-date" name="current-date" placeholder="MM/DD/YYYY"><br>
+                <label for="type">Type: </label>   
+                <select id="type" name="type">
+                    <option ></option> 
+                    <option value="dog">Dog</option>   
+                    <option value="cat">Cat</option>   
+                    <option value="livestock">Livestock</option>  
+                    <option value="other">Other</option>  
+                </select><br>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" placeholder=""><br>
+                <label for="name">Sex: </label>
+                <select id="sex" name="sex">
+                    <option ></option>   
+                    <option value="male">M</option>   
+                    <option value="female">F</option> 
+                </select><br>
+                <label for="breed">Breed: </label>
+                <input type="text" id="breed" name="breed" placeholder=""><br>
+                <label for="altered">Altered: </label>
+                <select id="sex" name="sex">
+                    <option ></option>   
+                    <option value="yes">Y</option>   
+                    <option value="no">N</option> 
+                </select><br>
+            </form>
+        </div>
+    </body>
+    <div class="submit">
+        <button class="button">Submit</button>
+    </div>
+</html>

@@ -1,0 +1,19 @@
+body {
+
+    font-family: Arial, sans-serif;
+    padding: 3em 3em;
+}
+
+h1 {
+ text-align: center;
+}
+
+.information {
+    border: 2px solid black;
+    padding: 2em 2em;
+}
+
+.submit {
+    text-align: right;
+    padding-top: 2em;
+}
