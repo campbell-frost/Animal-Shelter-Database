@@ -4,17 +4,17 @@
         <title>Animal Intake</title>
         <link rel="stylesheet" type="text/css" href="animal-intake.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-tuGq0nBzUZkXYfZ6h/gXf9JK5vIkgc/OFrwjO46g8NpswU+c/eVjB1jTA9x2JNx2mjBw+E/CkGfgnQ/Fh0J2QgA==" crossorigin="anonymous" />
-        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <h1> Animal Intake </h1>
     
     <body>
         <div class="information">
+            <!-- This form container contains the information that will be submitted in an animal-intake disposition for to register animal.
+            The form container allows me to reference this seciton of information later.-->
             <form action="">
-                <label>Intake Number: </label><br>
+                <label>Intake Number: </label><br> 
                 <label>Date: </label>
-                <input type="text" id="current-date" name="current-date" placeholder="MM/DD/YYYY"><br>
+                <input type="date" id="current-date" name="current-date"><br>
                 <label for="type">Type: </label>   
                 <select id="type" name="type">
                     <option ></option> 
@@ -24,7 +24,7 @@
                     <option value="other">Other</option>  
                 </select><br>
                 <label for="name">Name: </label>
-                <input type="text" id="name" name="name" placeholder=""><br>
+                <input type="text" id="name" name="name"><br>
                 <label for="name">Sex: </label>
                 <select id="sex" name="sex">
                     <option ></option>   
@@ -32,13 +32,38 @@
                     <option value="female">F</option> 
                 </select><br>
                 <label for="breed">Breed: </label>
-                <input type="text" id="breed" name="breed" placeholder=""><br>
+                <input type="text" id="breed" name="breed"><br>
                 <label for="altered">Altered: </label>
-                <select id="sex" name="sex">
+                <select id="altered" name="altered">
                     <option ></option>   
                     <option value="yes">Y</option>   
                     <option value="no">N</option> 
                 </select><br>
+                <label for="microchip">Microchip: </label>
+                <select id="microchip" name="microchip">
+                    <option ></option>   
+                    <option value="yes">Y</option>   
+                    <option value="no">N</option> 
+                </select><br>
+                <label for="aco">Brought in by ACO(badge#) or Citizen: </label>
+                <input type="text" id="aco" name="aco" ><br>
+                <label for="location">Location: </label>
+                <input type="text" id="location" name="location" ><br>
+                <p>Shelter Cage Number or Veterinarian Number if housed off-site</p>
+                <label for="owner">Owner(if known): </label>
+                <input type="text" id="owner" name="owner" ><br>
+                <label for="phone_number">Phone Number: </label>
+                <input type="text" id="phone_number" name="phone_number" ><br>
+                <label for="address">Address: </label>
+                <input type="text" id="address" name="address" ><br>
+                <label for="city">City: </label>
+                <input type="text" id="city" name="city" ><br>
+                <label for="state">State: </label>
+                <input type="text" id="state" name="state" ><br>
+                <label for="zipcode">Zipcode: </label>
+                <input type="text" id="zipcode" name="zipcode" ><br>
+                <label for="animal_img">File Upload: </label>
+                <input type="file" id="animal_img" name="animal_img">
             </form>
         </div>
     </body>
