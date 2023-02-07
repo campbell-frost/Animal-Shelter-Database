@@ -4,26 +4,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 100vh;
 }
 
 #banner {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 97%;
+    width: 97.5%;
     height: 70px;
-    background-color: #1E90FF;
+    background-color: #275DAD;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    border-radius: 50px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-
 }
 
 #title {
@@ -60,41 +59,51 @@ body {
     padding-left: 40px;
 }
 
-
-
-
-
-
-
-#center-box {
-    display: flex;
-    flex-wrap: wrap;
-    width: 700px;
-    height: 300px;
-    border-radius: 4px;
-    margin-top: 50px;
-    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.1));
-    background-color: #ffffff00;
-    align-items: center;
-    justify-content: center;
-}
-
-.button {
-    width: calc(33.33% - 10px);
-    height: calc(50% - 10px);
-    margin: 5px;
-    background-color: white;
-    border: 2px solid #1E90FF;
-    border-radius: 4px;
+nav{
+    position: fixed;
+    border: none;
     text-align: center;
-    padding: 20px;
+    font-weight: bold;
     font-size: 1.5em;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    padding-top: 0px;
+    width: 100%;
+    top: 70px;
 }
 
-.button:hover {
-    background-color: #1E90FF;
+a{
+    
+    border: none;
     color: white;
-    transform: scale(1.1);
+    font-size: medium;
+}
+nav ul 
+{ 
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    background-color: #5B616A;
+    list-style-type:none;
+	display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-type:none;
+    padding-left: 32px; 
+    float: left;
+	margin: 0 41px;
+}
+nav li a 
+{
+    list-style-type:none;
+    text-align: center;
+    padding: 14px 16px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+nav a:hover
+{
+	background-color: #BBBBBB;
 }
