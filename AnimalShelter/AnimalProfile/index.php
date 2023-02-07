@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Animal Profile</title>
-     <link rel="stylesheet" href="/animalProfile.css" />
+     <link rel="stylesheet" href="/index.css" />
   
 </head>
 <body>
