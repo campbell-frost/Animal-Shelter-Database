@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Insert form value into database</title>
+    <title>Animal Profile</title>
+     <link rel="stylesheet" href="/animalProfile.css" />
+  
 </head>
 <body>
+    <h1>Animal Profile</h1>
+  
+  <div class="details-bar">
+    <p>Details</p>
+  </div>
     <form action = "insert.php" method = "post">
-
+        <img 
+          id="profile-img"
+          src="https://cdn.glitch.global/c872be46-a769-4ed0-b479-5b07afcd61d4/Pawprint.jpeg?v=1675798502918"
+          alt="A picture of a pawprint"
+          width="200px"
+        />
+        <label>Add Photo:</label><input type = "file" name = "add photo"><br>
         <label>Name:</label><input type = "text" name="name"><br>
         <label>ID:</label><input type = "text" name="id"><br>
         <label>Cage #:</label><input type = "text" name="cage #"><br>
@@ -19,9 +32,10 @@
         <label>Altered:</label><input type = "text" name = "altered"><br>
         <label>Microchip:</label><input type = "text" name = "microchip"><br>
         <label>Brought in by ACO(badge #) or citizen:</label><input type = "text" name = "brought in by ACO(badge #) or citizen"><br>
-        <label>Add Photo:</label><input type = "file" name = "add photo"><br>
-        
-        <button type="submit" name="submit">Submit</button>
     </form>
+  
+  <div id="save">
+      <button type="save" name="save">Save</button>
+  </div>
 </body>
 </html>
