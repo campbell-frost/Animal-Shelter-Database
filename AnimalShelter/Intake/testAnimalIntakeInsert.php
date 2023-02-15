@@ -2,7 +2,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$dbname = "animalshelter"; // name of the database is 'animalshelter'
+$dbname = "animalshelter";
 
 
 $conn = mysqli_connect($server , $username , $password , $dbname);
@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
 {
     if(!empty($_POST['name']) && !empty($_POST['breed']) && !empty($_POST['color']) && !empty($_POST['type']))
     {
-        // Values entered in the form by the user and sent to 'animalintake' table
+        // Values entered in the form by the user
         $date = $_POST['date'] ;
         $type = $_POST['type'] ;
         $name = $_POST['name'] ;
@@ -37,11 +37,12 @@ if(isset($_POST['submit']))
         $spayedNeutered = $_POST['spayedNeutered'] ;
         $tagNumber = $_POST['tagNumber'] ;
         $clinic = $_POST['clinic'] ;
+        $file = $_POST['file'] ;
 
-        // Form a query passing in the values from the user to the form attributes in the table called 'animalintake'
+        // Form a query passing in the values from the user to the form attributes
         $query = "insert into animalintake(date, type, name, dateOfBirth, sex, breed, color, weight, altered, microchip, broughtIn, location, owner, phone, address, city, state, zipcode, rabiesVacc, rabiesYear, 
-        distemperVacc, distemperYear, spayedNeutered, tagNumber, clinic) values('$date', '$type', '$name', '$dateOfBirth', '$sex', '$breed', '$color', '$weight', '$altered', '$microchip', '$broughtIn', '$location', '$owner', '$phone', '$address', '$city', 
-        '$state', '$zipcode', '$rabiesVacc', '$rabiesYear', '$distemperVacc', '$distemperYear', '$spayedNeutered', '$tagNumber', '$clinic')";
+        distemperVacc, distemperYear, spayedNeutered, tagNumber, clinic, file) values('$date', '$type', '$name', '$dateOfBirth', '$sex', '$breed', '$color', '$weight', '$altered', '$microchip', '$broughtIn', '$location', '$owner', '$phone', '$address', '$city', 
+        '$state', '$zipcode', '$rabiesVacc', '$rabiesYear', '$distemperVacc', '$distemperYear', '$spayedNeutered', '$tagNumber', '$clinic', '$file')";
 
         // Incase query will not run it will throw an error
         $run = mysqli_query($conn, $query) or die(mysqli_error());
