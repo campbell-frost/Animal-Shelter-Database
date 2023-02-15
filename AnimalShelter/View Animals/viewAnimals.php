@@ -4,7 +4,8 @@ $username = "root";
 $password = "";
 $dbname = "animalintake";
 
-$conn = new mysqli($server, $username, $password, $dbname)
+$conn = new mysqli($server, $username, $password, $dbname) ;
+
 // Check connection
 if($conn -> connect_error)
 {
