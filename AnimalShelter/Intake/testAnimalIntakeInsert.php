@@ -4,8 +4,9 @@ $username = "root";
 $password = "";
 $dbname = "animalshelter";
 
-
+// Creates connection
 $conn = mysqli_connect($server , $username , $password , $dbname);
+
 // Condition when the user clicks submit on the form
 if(isset($_POST['submit']))
 {
