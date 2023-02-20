@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
         $file = $_POST['file'] ;
 
         // Form a query passing in the values from the user to the form attributes
-        $query = "insert into animalintake(date, type, name, dateOfBirth, sex, breed, color, weight, altered, microchip, broughtIn, location, owner, phone, address, city, state, zipcode, rabiesVacc, rabiesYear, 
+        $query = "insert into animal(date, type, name, dateOfBirth, sex, breed, color, weight, altered, microchip, broughtIn, location, owner, phone, address, city, state, zipcode, rabiesVacc, rabiesYear, 
         distemperVacc, distemperYear, spayedNeutered, tagNumber, clinic, file) values('$date', '$type', '$name', '$dateOfBirth', '$sex', '$breed', '$color', '$weight', '$altered', '$microchip', '$broughtIn', '$location', '$owner', '$phone', '$address', '$city', 
         '$state', '$zipcode', '$rabiesVacc', '$rabiesYear', '$distemperVacc', '$distemperYear', '$spayedNeutered', '$tagNumber', '$clinic', '$file')";
 
