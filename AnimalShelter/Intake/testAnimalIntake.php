@@ -5,7 +5,7 @@
 </head>
 <body>
     <form action="testAnimalIntakeInsert.php" method="post">
-        <label>Today's Date:</label><input type="text" name="date" placeholder="MM-DD-YYYY"><br>
+        <label>Today's Date:</label><input type="date" name="date"><br>
         <label>Animal Type:</label>
         <select name="type">
             <option value=""></option>
@@ -14,7 +14,7 @@
             <option value="Livestock">Livestock</option>
         </select><br>
         <label>Animal Name:</label><input type="text" name="name"><br>
-        <label>Date of Birth:</label><input type="text" name="dateOfBirth" placeholder="MM-DD-YYYY"><br>
+        <label>Date of Birth:</label><input type="date" name="dateOfBirth"><br>
         <label>Sex:</label>
         <select name="sex">
             <option value=""></option>
