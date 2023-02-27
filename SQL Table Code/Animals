@@ -1,8 +1,8 @@
 CREATE TABLE animal (
   animalID INT PRIMARY KEY,
-  date VARCHAR(50) NOT NULL,
+  date DATE NOT NULL,
   type VARCHAR(50) NOT NULL,
-  name VARCHAR(50) NOT NULL,    dateOfBirth VARCHAR(50) NOT NULL,
+  name VARCHAR(50) NOT NULL,    dateOfBirth DATE NOT NULL,
   sex CHAR(1) NOT NULL,   breed VARCHAR(50) NOT NULL,
   color VARCHAR(20) NOT NULL,
   weight FLOAT NOT NULL,
