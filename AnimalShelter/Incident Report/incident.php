@@ -4,11 +4,11 @@
     <title>Incident Report</title>
 </head>
 <body>
-    <form action="testAnimalIntakeInsert.php" method="post">
+    <form action="incidentInsert.php" method="post">
         <label>ACO Badge Number:</label><input type="text" name="badgeNumber"><br>
         <label>Intake Number:</label><input type="text" name="intakeNumber"><br>
-        <label>Date:</label><input type="text" name="date" placeholder="MM-DD-YYYY"><br>
-        <label>Time:</label><input type="time" name="time" placeholder=""><br>
+        <label>Date:</label><input type="date" name="date"><br>
+        <label>Time:</label><input type="time" name="time"><br>
         <label>Weather:</label><input type="text" name="weather"><br>
         <label>Animal Type:</label>
         <select name="type">
@@ -30,10 +30,9 @@
         <label>City:</label><input type="text" name="city"><br>
         <label>State:</label><input type="text" name="state"><br>
         <label>Zipcode:</label><input type="text" name="zipcode"><br>
-        <label for="freeform">Description:</label><br>
-
-        <textarea id="freeform" name="freeform" rows="4" cols="50">
-        Enter text here...
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="5" cols="50">
+            
         </textarea>
         <button type="submit" name="submit">Submit</button>
         <button type="text/css" media="print" name="print">Print</button>
