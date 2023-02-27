@@ -1,5 +1,5 @@
 CREATE TABLE user (
-num INT PRIMARY KEY,
+badgeNumber INT PRIMARY KEY,
 name VARCHAR(50),
 user_id VARCHAR(50),
 password VARCHAR(50)
