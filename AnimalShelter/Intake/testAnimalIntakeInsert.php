@@ -1,18 +1,20 @@
 <?php
+// Assigns server, username, password, and database name to variables to be used to create a connection to the database for what the user inputs  
 $server = "localhost";
 $username = "root";
 $password = "";
 $dbname = "animalshelter";
 
-// Creates connection
+// Creates connection to the database by passing the variables into the mysqli_connect() method
 $conn = mysqli_connect($server , $username , $password , $dbname);
 
-// Condition when the user clicks submit on the form
+// Action that is taken when the user clicks 'submit' on the form for the animal intake page
 if(isset($_POST['submit']))
 {
+    // Action that is taken when the fields for 'name', 'breed', 'color', and 'type' are filled in the animal intake page
     if(!empty($_POST['name']) && !empty($_POST['breed']) && !empty($_POST['color']) && !empty($_POST['type']))
     {
-        // Values entered in the form by the user
+        // Values entered in the form by the user are 
         $date = $_POST['date'] ;
         $type = $_POST['type'] ;
         $name = $_POST['name'] ;
