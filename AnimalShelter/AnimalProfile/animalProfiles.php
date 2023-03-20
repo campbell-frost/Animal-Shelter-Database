@@ -33,10 +33,10 @@ $conn->close();
 
 require("ViewAnimalPage.php") ;
 
-function getAnimalInfo($id)
+function getAnimalInfo($animalID)
 {
     $array = array();
-    $animalProfile = mysql_query("SELECT * FROM 'animal' WHERE 'animalID'=".$id);
+    $animalProfile = mysql_query("SELECT * FROM 'animal' WHERE 'animalID'=".$animalID);
 
     while($row = mysql_fetch_assoc($animalProfile))
     {
