@@ -5,10 +5,19 @@
 </head>
 <body>
     <form action="incidentInsert.php" method="post">
+         <!-- Animal Control Officer Badge Number -->
         <label>ACO Badge Number:</label><input type="text" name="badgeNumber"><br>
+        
+        <!-- Animal Intake Number text field-->
         <label>Intake Number:</label><input type="text" name="intakeNumber"><br>
+        
+        <!-- Current date text field -->
         <label>Date:</label><input type="date" name="date"><br>
+        
+        <!-- Current time text field -->
         <label>Time:</label><input type="time" name="time"><br>
+        
+        <!-- Description of weather when animal is being collected  -->
         <label>Weather:</label><input type="text" name="weather"><br>
         <label>Animal Type:</label>
         <select name="type">
@@ -17,6 +26,8 @@
             <option value="Cat">Cat</option>
             <option value="Livestock">Livestock</option>
         </select><br>
+        
+        <!-- Animal Control Officer Badge Number -->
         <label>Sex:</label>
         <select name="sex">
             <option value=""></option>
