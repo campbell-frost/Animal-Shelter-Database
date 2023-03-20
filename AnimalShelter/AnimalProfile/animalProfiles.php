@@ -13,7 +13,7 @@ if($conn -> connect_error)
 }
 
 // Check exit reason and update the necessary fields
-if ($exit_reason == "Auction") {
+/*if ($exit_reason == "Auction") {
     $sql = "UPDATE disposition SET date = NOW(), address = '$auction_location' WHERE animal_id = '$animal_id'";
 } elseif ($exit_reason == "Euthanized") {
     $sql = "UPDATE disposition SET date = NOW(), vet = '$vet_info' WHERE animal_id = '$animal_id'";
@@ -26,7 +26,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Disposition updated successfully";
 } else {
     echo "Error updating disposition: " . $conn->error;
-}
+} */
 
 // Close database connection
 $conn->close();
