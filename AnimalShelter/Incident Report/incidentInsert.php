@@ -10,9 +10,9 @@ $conn = mysqli_connect($server , $username , $password , $dbname);
 if(isset($_POST['submit']))
 {
     // Checks that the required fields are completed
-    if(!empty($_POST['badgeNumber']), !empty($_POST['intakeNumber']), !empty($_POST['date']), 
-    !empty($_POST['time']), !empty($_POST['weather']), !empty($_POST['type']), !empty($_POST['sex']), 
-    !empty($_POST['color']), !empty($_POST['description']))
+    if(!empty($_POST['badgeNumber']) && !empty($_POST['intakeNumber']) && !empty($_POST['date']), 
+    !empty($_POST['time'])&&  !empty($_POST['weather'])&& !empty($_POST['type'])&& !empty($_POST['sex']) && 
+    !empty($_POST['color'])&& !empty($_POST['description']))
     {
         // Values entered in the form by the user
         $badgeNumber = $_POST['badgeNumber'] ;
