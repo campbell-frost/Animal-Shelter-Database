@@ -4,6 +4,7 @@ include("viewAnimals.php");
 if(!empty($_GET['name']) && !empty($_GET['breed']) && !empty($_GET['color']) && !empty($_GET['type']) && !empty($_GET['dateOfBirth']) && !empty($_GET['sex']) && !empty($_GET['weight']) && !empty($_GET['rabiesVacc']) && !empty($_GET['rabiesYear']) && !empty($_GET['spayedNeutered']) && !empty($_GET['tagNumber']))
     {
         // Values retrieved from the 'animalintake' table
+        $file = $_GET['file'] ;
         $type = $_GET['type'] ;
         $name = $_GET['name'] ;
         $dateOfBirth = $_GET['dateOfBirth'] ;
@@ -67,6 +68,7 @@ if(!empty($_GET['name']) && !empty($_GET['breed']) && !empty($_GET['color']) && 
             <!--border = 1 width = 150-->
             <table>
                 <tr>
+                   <th>Photo</th>
                     <th>Name</th>
                     <th>Type</th>
                     <th>D.O.B</th>
@@ -95,6 +97,7 @@ if(!empty($_GET['name']) && !empty($_GET['breed']) && !empty($_GET['color']) && 
                             {                 // <a class = 'btn btn-primary btn-sm' href = 'animalProfileWebpage.html'>SELECT</a>
                                               // <td> <button type = 'button' class = 'btn btn-primary btn-sm' href = 'animalProfileWebpage.html'>SELECT</button>
                                 echo "<tr>
+                                    <td>" . $row["file"] . "</td>
                                     <td>" . $row["name"] . "</td>
                                     <td>" . $row["type"] . "</td>
                                     <td>" . $row["dateOfBirth"] . "</td>
