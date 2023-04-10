@@ -11,6 +11,7 @@
 	mysqli_close($dbconnection);
 	
 ?>
+
 <script>
-	location.href="home.php";
+	//cation.href='home.html';
 </script>

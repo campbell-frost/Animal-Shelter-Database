@@ -1,37 +1,7 @@
-<html>
-  <head>
-    <title>Indian Lake Animal Shelter</title>
-    <meta name = "viwport" content ="width=device-width, initial-scale="1.0">
-    <link rel="stylesheet" type="text/css" href="animal-intake/styles.css?v=2">
-  </head>
-  
-<body>
-  <div id="banner">
-    <div id="title">Indian Lake Animal Shelter</div>
-	    <div id="buttons">
-        <button id="create-account-button">Create Account</button>
-        <button id="login-button">Login</button>
-        <button id="logout-button">Logout</button>
-      </div>
-	    <div id="search-bar"> 
-	      <input type="text" placeholder="Search...">
-	    </div>
-    </div>
-      <ul>
-	      <li><a href="animal-intake.php">Animal Intake</a></li>
-        <li><a href="viewAnimals.php">View Animals</a></li>
-        <li><a href="reports.php">Reports</a></li> 
-        <li><a href="incident.php">File Incident Report</a></li> 
-        <li><a href="dispositions.php">Dispositions</a></li> 
-		    <li><a href="fees-reciept.php">Fees Receipt</a></li> 
-      </ul>
-  
-</body>
-  
-
-
-
-
+<?php
+	include("navbar.php");
+?>
+<link rel="stylesheet" type="text/css" href="animal-intake/styles.css?v=2">
     <form action="animalIntakePost.php" method="post">
         <!-- Date field for current date entered by selecting a date in a calender -->
         <label>Date:</label><input type="date" name="date"><br>

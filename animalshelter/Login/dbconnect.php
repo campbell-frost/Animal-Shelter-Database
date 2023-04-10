@@ -6,5 +6,4 @@ $dbpassword = "";
 $dbname = "animalshelter";
 
 $dbconnection = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
-
 ?>
