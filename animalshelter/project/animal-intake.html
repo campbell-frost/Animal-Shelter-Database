@@ -1,0 +1,186 @@
+<html>
+<head>
+  <title>Indian Lake Animal Shelter</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="banner">
+    <div id="title">Indian Lake Animal Shelter</div>
+    <div id="search-bar">
+      <input type="text" placeholder="Search..."></div>
+      
+    </div>
+    <nav>
+      <ul>
+	    <li><a href="animal-intake.html">Animal Intake</a></li>
+        <li><a href="view-animals.php">View Animals</a></li>
+        <li><a href="reclaim-animals.php">Reclaim Animals</a></li> 
+        <li><a href="reports.php">Reports</a></li> 
+        <li><a href="incident-reports.php">File Incident Report</a></li> 
+		<li><a href="dispositions.php">Dispositions</a></li> 
+		<li><a href="fees-reciept.php">Fees Receipt</a></li> 
+      
+    </ul>
+  </nav>
+</body>
+  
+  </div>  
+    <head>
+        <!-- Title of the browser tab -->
+        <title>Animal Intake</title> 
+        <!-- Style references -->
+        <link rel="stylesheet" type="text/css" href="animalIntake.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-tuGq0nBzUZkXYfZ6h/gXf9JK5vIkgc/OFrwjO46g8NpswU+c/eVjB1jTA9x2JNx2mjBw+E/CkGfgnQ/Fh0J2QgA==" crossorigin="anonymous" />
+    </head>
+    <!-- Title at the top of the website page -->
+    <h1> Animal Intake </h1>
+    
+    <body>
+        <div class="information">
+            <!-- This form container contains the information that will be submitted in an animal-intake disposition for to register animal.
+            The form container allows me to reference this seciton of information later.-->
+            <form action="">
+                <!--Indicator for the intake number for the animal -->
+                <label>Intake Number: </label><br> 
+
+                <!--Date selector that displays calendar allowing user to indicate the current date -->
+                <label>Date: </label>
+                <input type="date" id="current-date" name="current-date"><br>
+
+                <!-- This is a drop down list for selecting the animal's type. Since there are three 
+                    different types of animals the shelter accepts the user will be 
+                    able to select from 3 options, blank, male, and female, which will be 
+                    displayed by clicking the down arrrow. -->
+                <label for="type">Type: </label>   
+                <select id="type" name="type">
+                    <option ></option> 
+                    <option value="dog">Dog</option>   
+                    <option value="cat">Cat</option>   
+                    <option value="cow">Livestock</option>  
+                </select><br>
+
+                <!-- This is the Name of the animal, that allows user to input
+                    the name. -->
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name"><br>
+
+                <!-- This is a drop down list for selecting animal's sex. The user will be 
+                    able to select from 3 options, blank, male, and female, which will be 
+                    displayed by clicking the down arrrow. -->
+                <label for="name">Sex: </label>
+                <select id="sex" name="sex">
+                    <option ></option>   
+                    <option value="male">M</option>   
+                    <option value="female">F</option> 
+                </select><br>
+
+                 <!-- This is the brred of the animal, that allows user to input
+                    the breed. -->
+                <label for="breed">Breed: </label>
+                <input type="text" id="breed" name="breed"><br>
+
+                <!-- This is a drop down list for selecting whether an animal is altered or not.
+                    The user will be able to select from 3 options, blank, yes, and no, 
+                    which will be displayed by clicking the down arrrow. -->
+                <label for="altered">Altered: </label>
+                <select id="altered" name="altered">
+                    <option ></option>   
+                    <option value="yes">Y</option>   
+                    <option value="no">N</option> 
+                </select><br>
+
+                <!-- This is a drop down list for selecting whether an animal has a microchip.
+                    The user will be able to select from 3 options, blank (indicates no response), 
+                    yes, and no, which will be displayed by clicking the down arrrow. -->
+                <label for="microchip">Microchip: </label>
+                <select id="microchip" name="microchip">
+                    <option ></option>   
+                    <option value="yes">Y</option>   
+                    <option value="no">N</option> 
+                </select><br>
+
+                <!-- This is the field indicating if animal has been brought in by Animal
+                Control Officer or a citizen. User can input a number or text. -->
+                <label for="aco">Brought in by ACO(badge#) or Citizen: </label>
+                <input type="text" id="aco" name="aco" ><br>
+
+                <!-- This is the location of where the animal is being housed at the shelter,
+                    in a cage or offsite. User can input a number or text in the box. -->
+                <label for="location">Location: </label>
+                <input type="text" id="location" name="location" ><br>
+                <p>Shelter Cage Number or Veterinarian Number if housed off-site</p>
+
+                <!-- This is the owner of the animal, that allows user to input
+                    the owner name. -->
+                <label for="owner">Owner(if known): </label>
+                <input type="text" id="owner" name="owner" ><br>
+
+                <!-- This is the phone number of the animal, that allows user to input
+                    the owner's phone number. -->
+                <label for="phone-number">Phone Number: </label>
+                <input type="text" id="phone-number" name="phone-number" ><br>
+
+                <!-- Address of the owner -->
+                <label for="address">Address: </label>
+                <input type="text" id="address" name="address" ><br>
+
+                <!-- City of the owner address -->
+                <label for="city">City: </label>
+                <input type="text" id="city" name="city" ><br>
+
+                <!-- State of the owner address -->
+                <label for="state">State: </label>
+                <input type="text" id="state" name="state" ><br>
+
+                <!-- Zipcode of the owner address -->
+                <label for="zipcode">Zipcode: </label>
+                <input type="text" id="zipcode" name="zipcode" ><br>
+
+                <!-- This is a drop down list for selecting whether animal has rabies. -->
+                <label for="rabies-vaccination">Rabies Vaccination: </label>
+                <select id="rabies-vaccination" name="rabies-vaccination">
+                    <option ></option>   
+                    <option value="yes">Y</option> 
+                    <option value="no">N</option> 
+                </select><br>
+                
+                  <!-- Address of the owner -->
+                <label for="distemper-vaccination">Distemper Vaccination: </label>
+                <select id="distemper-vaccination" name="distemper-vaccination">
+                    <option ></option>   
+                    <option value="yes">Y</option> 
+                    <option value="no">N</option> 
+                </select><br>
+
+                  <!-- Indicates if animal is spayed or neutered -->
+                <label for="spayed-or-neutered">Spayed/Neutered: </label>
+                <select id="spayed-or-neutered" name="spayed-or-neutered">
+                    <option ></option>   
+                    <option value="yes">Y</option> 
+                    <option value="no">N</option> 
+                </select><br>
+
+                  <!-- Tag number of the animal -->
+                <label for="tag-number">Tag Number: </label>
+                <input type="text" id="tag-number" name="tag-number" ><br>
+
+                <!--Date selector that displays calendar allowing user to indicate the current date -->
+                <label for="clinic">Clinic: </label>
+                <input type="text" id="clinic" name="clinic" ><br>
+
+                <!--Date selector that displays calendar allowing user to indicate the date of birth of animal -->
+                <label>Date of Birth: </label>
+                <input type="date" id="date-of-birth" name="date-of-birth"><br>
+
+                <!--Button used to select a file from the user's computer to upload for the animal's image -->
+                <label for="animal-img">File Upload: </label>
+                <input type="file" id="animal-img" name="animal-img">
+            </form>
+        </div>
+    </body>
+    <!-- Buttom used to submit the completed application to the database. -->
+    <div class="submit">
+        <button class="button">Submit</button>
+    </div>
+</html>
+

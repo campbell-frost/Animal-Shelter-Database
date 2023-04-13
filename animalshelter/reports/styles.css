@@ -1,0 +1,142 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+#wrapper
+{
+width: 90%;
+margin-right: auto;
+margin-left: auto;
+}
+#banner {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 97.5%;
+  height: 70px;
+  background-color: #5FB0B6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#title {
+  color: white;
+  font-size: 2.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+}
+
+
+
+#title:hover {
+  border: none;
+  text-decoration: none;
+}
+
+#buttons {
+display: flex;
+background-color: #5FB0B6;
+color: white;
+text-align: center;
+text-decoration: none;
+border-radius: 5px;
+
+}
+
+#create-account-button, #login-button, #logout-button {
+border: none;
+border-radius: 3px;
+margin-left: 7px;
+color: #5B616A;
+width: 100%;
+font-size: 14px;
+padding: 5px;
+cursor: pointer;
+}
+
+#create-account-button:hover, #logout-button:hover, #login-button:hover {
+background-color: #5B616A;
+color: white;
+}
+
+#search-bar {
+  position: relative;
+  margin-right: 20px;
+}
+
+#search-bar input {
+  font-size: 14px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+  background-image: url('icons/search.png');
+  /* set the path to the icon */
+  background-size: 23px 23px;
+  /* adjust the size of the icon */
+  background-position: left center;
+  /* position the icon on the left side of the input */
+  background-position: 6px;
+  /* offsets icon from left of field */
+  background-repeat: no-repeat;
+  /* prevent the icon from repeating */
+  padding-left: 40px;
+}
+
+
+
+a{ 
+  text-decoration: none   ;
+  border: 3px solid #4CA1AF;
+  border-radius: 3px;
+  height: 30px;
+  color:white;
+  padding-top: 12;
+}
+ul 
+{ 
+  padding-top: 70px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #5B616A;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin: 0 45px;
+  width: auto;
+}
+li a 
+{
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+  margin: 14px 16px;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+a:hover
+{
+background-color: #4CA1AF;
+}

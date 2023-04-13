@@ -1,0 +1,133 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+#wrapper
+{
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#banner {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 97.5%;
+    height: 70px;
+    background-color: #5FB0B6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#title {
+    color: white;
+    font-size: 2.5em;
+    margin-left: 20px;
+}
+#buttons {
+  display: flex;
+  align-items: left;
+  margin-left: 420px;
+
+}
+
+#create-account-button, #login-button, #logout-button {
+  background-color: white;
+  border: none;
+  color: #5B616A;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#create-account-button:hover, #logout-button:hover, #login-button:hover {
+  background-color: #5B616A;
+  color: white;
+}
+
+#search-bar {
+    position: relative;
+    margin-right: 20px;
+}
+
+#search-bar input {
+    font-size: 14px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 8px;
+    background-image: url('icons/search.png');
+    /* set the path to the icon */
+    background-size: 23px 23px;
+    /* adjust the size of the icon */
+    background-position: left center;
+    /* position the icon on the left side of the input */
+    background-position: 6px;
+    /* offsets icon from left of field */
+    background-repeat: no-repeat;
+    /* prevent the icon from repeating */
+    padding-left: 40px;
+}
+
+nav{
+    position: fixed;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-top: 0px;
+    width: 100%;
+    top: 70px;
+}
+
+a{
+    
+    border: none;
+    color: white;
+    font-size: medium;
+}
+nav ul 
+{ 
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    background-color: #5B616A;
+    list-style-type:none;
+	display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-type:none;
+    padding-left: 32px; 
+    float: left;
+	margin: 0 15px;
+}
+nav li a 
+{
+    list-style-type:none;
+    text-align: center;
+    padding: 14px 16px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+nav a:hover
+{
+	background-color: #BBBBBB;
+}
