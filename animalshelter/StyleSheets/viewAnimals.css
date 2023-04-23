@@ -1,0 +1,26 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+.animal-link{
+  border: none;
+  text-decoration: underline;
+  color: black;
+
+
+}
+.animal-link:hover {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+}
+.edit-btn {
+  color: black;
+  text-decoration: underline;
+  border: none;
+}
+
+.edit-btn:hover {
+  background-color: transparent;
+}

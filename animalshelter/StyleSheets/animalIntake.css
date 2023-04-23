@@ -1,0 +1,64 @@
+form {
+
+  margin: 0 auto;
+  width: 300px;
+  padding: 0 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
+}
+
+
+form label {
+  display: block;
+  /* added */
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+form select {
+  margin-top: 10px;
+  width: 305px;
+}
+
+form p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  margin-bottom: 10px;
+  padding-bottom: 40px;
+}
+
+form input[type="submit"] {
+  text-align: center;
+  background-color: #4682B4;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 25px;
+  display: block;
+  margin: 15 auto;
+
+}
+
+form input[type="submit"]:hover {
+  background-color: #333;
+}

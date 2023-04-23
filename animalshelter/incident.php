@@ -1,7 +1,7 @@
 <?php
 	include("navbar.php");
 ?>
-<link rel="stylesheet" type="text/css" href="incident/styles.css?v=2">
+<link rel="stylesheet" type="text/css" href="StyleSheets/incidentReport.css?v=2">
 <html>
 <head>
     <title>Incident Report</title>
@@ -74,14 +74,3 @@
     </form>
 </body>
 </html>
-         <script>
-           document.getElementById("create-account-button").addEventListener("click", function() {
-             window.location.href = "createAccount.php";
-           });
-           document.getElementById("login-button").addEventListener("click", function() {
-             window.location.href = "login.php";
-           });
-           document.getElementById("logout-button").addEventListener("click", function() {
-             window.location.href = "logout.php";
-           });
-         </script>

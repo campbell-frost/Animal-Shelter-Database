@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Indian Lake Animal Shelter</title>
-        <link rel="stylesheet" type="text/css" href="home/styles.css?v=2">
+        <link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css?v=2">
     <meta name = "viwport" content ="width=device-width, initial-scale="1.0">
   </head>
   
@@ -16,12 +16,12 @@
   </div>
     
       <ul>
-	      <li><a href="animal-intake.php">Animal Intake</a></li>
+	    <li><a href="animal-intake.php">Animal Intake</a></li>
         <li><a href="viewAnimals.php">View Animals</a></li>
         <li><a href="reports.php">Reports</a></li> 
         <li><a href="incident.php">File Incident Report</a></li> 
 		<li><a href="disposition.php">Dispositions</a></li> 
-		    <li><a href="fees-receipt.php">Fees Receipt</a></li> 
+		<li><a href="fees-receipt.php">Fees Receipt</a></li> 
     </ul>
   
 </body>
@@ -33,7 +33,7 @@
     window.location.href = "createAccount.php";
   });
   document.getElementById("login-button").addEventListener("click", function() {
-    window.location.href = "login.php";
+    window.location.href = "index.php";
   });
   document.getElementById("logout-button").addEventListener("click", function() {
     window.location.href = "logout.php";

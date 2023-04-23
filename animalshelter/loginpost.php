@@ -6,46 +6,38 @@
 
 	include('dbconnect.php');
 	
-	$user_id=$_POST['user_id'];
+	$username=$_POST['username'];
 	$password=$_POST['password'];
-		
-	$query="select * from users where user_id='$user_id'";
+	$accountType=$_POST['accountType'];
+	if (!$username || !$password || !$accountType) 
+	{
+		echo "<script>
+			window.alert('Please enter all the required fields.');
+			history.back(1);
+		</script>";
+		exit;
+	}
+	$query="SELECT * from user WHERE username='$username' and password='$password'";
 	$result=mysqli_query($dbconnection, $query);
-	
-	$data=mysqli_fetch_assoc($result);
-	
-	if(!$user_id)
+	$loginInfo=mysqli_fetch_assoc($result);
+	if (!$loginInfo) 
 	{
 		echo "<script>
-			window.alert('Please enter your user_id.');
-			history.back(1);
-			</script>";
-			exit;
+        window.alert('Invalid username or password.');
+        history.back(1);
+		</script>";
+		exit;
 	}
-	
-	
-	if($data['user_id']!=$user_id)
+	if ($loginInfo['accountType'] !== $accountType) 
 	{
 		echo "<script>
-			window.alert('Please enter valid user_id');
-			history.back(1);
-			</script>";
-			exit;
+        window.alert('Invalid Account Type.');
+        history.back(1);
+		</script>";
+		exit;
 	}
-	
-	if($data['password']!=$password)
-	{
-		echo "<script>
-			window.alert('Please enter valid username or password.');
-			history.back(1);
-			</script>";
-			exit;
-	}
-	
-	$_SESSION['name']=$data['name'];
 	mysqli_close($dbconnection);
-
 ?>
 <script>
-	location.href='home.html';
+	location.href='home.php';
 </script>
