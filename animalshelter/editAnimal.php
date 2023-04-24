@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
   <title>Edit Animal</title>
-	<link rel="stylesheet" type="text/css" href="StyleSheets/editAnimal.css">
+	<link rel="stylesheet" type="text/css" href="StyleSheets/editAnimal.css?v=1">
 </head>
 
 <body>
@@ -88,6 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <form method="post" action="">
     <button onclick="history.back()">Back</button>
     <input type="submit" value="Save">
+    <br>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="<?php echo $animal['name']; ?>"><br>
     <label for="type">Type:</label>

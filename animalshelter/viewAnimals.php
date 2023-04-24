@@ -33,7 +33,7 @@ if (mysqli_num_rows($results) === 0) {
 
 <head>
     <title>Animal Information</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheets/viewAnimals.css?v=2">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/viewAnimals.css?v=3">
 </head>
 
 <body>
