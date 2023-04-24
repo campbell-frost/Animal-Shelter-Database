@@ -1,0 +1,20 @@
+h1 {
+  text-align: center;
+}
+
+.details-bar {
+  
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding: 1em;
+  background-color: blue;
+  color: white;
+}
+
+form {
+  padding: 1em;
+}
+
+#save {
+  text-align: right;
+}
