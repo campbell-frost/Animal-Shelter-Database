@@ -1,0 +1,101 @@
+<?php
+
+    function Validate()
+    {
+        // Define an empty array to store any errors
+        $errors = array();
+
+        // Define regular expressions to match against user input
+        $alpha_numeric = "/^[a-zA-Z0-9]+$/";
+        $alpha = "/^[a-zA-Z]+$/";
+        $numeric = "/^[0-9]+$/";
+        $phone = "/^[0-9]{10}$/";
+
+        // Validate the 'date' field
+        if(!isset($_POST['date']) || empty($_POST['date']))
+        {
+            $errors[] = "Date is required";
+        }
+
+        // Validate the 'type' field
+        if(!isset($_POST['type']) || empty($_POST['type']))
+        {
+            $errors[] = "Animal type is required";
+        }
+        else if(!preg_match($alpha, $_POST['type']))
+        {
+            $errors[] = "Animal type should contain only alphabetical characters";
+        }
+
+        // Validate the 'name' field
+        if(!isset($_POST['dateOfBirth']) || empty($_POST['dateOfBirth']))
+        {
+            $errors[] = "Date of birth is required";
+        }
+
+        // Validate the 'sex' field
+        if(!isset($_POST['sex']) || empty($_POST['sex']))
+        {
+            $errors[] = "Sex is required";
+        }
+
+        // Validate the 'breed' field
+        if(!isset($_POST['breed']) || empty($_POST['breed']))
+        {   
+            $errors[] = "Breed is required";
+        }
+        else if(!preg_match($alpha_numeric, $POST['breed']))
+        {
+            $errors[] = "Breed should contain only alphabetical characters and numbers";
+        }
+
+        // Validate the 'color' field
+        if(!isset($_POST['color']) || empty($_POST['color']))
+        {
+            $errors[] = "Color is required";
+        }
+        else if(!preg_match($alpha, $_POST['color']))
+        {
+            $errors[] = "Color should contain only alphabetical characters";
+        }
+
+        // Validate the 'weight' field
+        if(!isset($_POST['weight']) || empty($_POST['weight']))
+        {
+            $errors[] = "Weight is required";
+        }
+        else if(!preg_match($numeric, $_POST['weight']))
+        {
+            $errors[] = "Weight should contain only numbers";
+        }
+
+        // Validate the 'altered' field
+        if(!isset($_POST['altered']) || empty($_POST['altered']))
+        {
+            $errors[] = "Altered is required";
+        }
+
+        // Validate the 'microchip' field
+        if(!isset($_POST['microchip']) || empty($_POST['microchip']))
+        {
+            $errors[] = "Microchip is required";
+        }
+
+        // Validate the 'broughtIn' field
+        if(!isset($_POST['broughtIn']) || empty($_POST['broughtIn']))
+        {
+            $errors[] = "Brought in by ACO or Citizen is required";
+        }
+        else if(!preg_match($alpha_numeric, $POST['breed']))
+        {
+            $errors[] = "Brought in by ACO or Citizen should contain only alphabetical characters and numbers";
+        }
+
+        // Validate the 'location' field
+        if(!isset($_POST['location']) || empty($_POST['location']))
+        {
+            $errors[] = "Location is required";
+        }
+
+    }
+?>
