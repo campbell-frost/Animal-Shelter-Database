@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div id="right-box">
-			<img src="media\lizard.jpg" alt="image">
+			<img src="Images\lizard.jpg" alt="image">
 		</div>
 	</div>
 </body>
@@ -38,5 +38,5 @@
 		}
 	}
 	return true;
-	}
+	
 </script>

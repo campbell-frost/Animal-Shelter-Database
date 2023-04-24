@@ -25,7 +25,7 @@
       </div>
     </div>
     <div id="right-box">
-      <img src="media\champ.jpg" alt="image">
+      <img src="Images\champ.jpg" alt="image">
     </div>
   </div>
 </body>
