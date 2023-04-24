@@ -12,11 +12,31 @@ include("navbar.php");
             ownerInfo.style.display = "none";
         }
     }
+    function showRabiesInfo() {
+        var hasRabies = document.getElementById("rabiesVacc");
+        var rabiesYear = document.getElementById("rabiesYear");
+        if (hasRabies.value == "Yes") {
+            rabiesYear.style.display = "block";
+        } else {
+            rabiesYear.style.display = "none";
+        }
+    }
+
+    function showDistemperInfo() {
+        var hasDistemper = document.getElementById("distempVacc");
+        var distemperYear = document.getElementById("distempYear");
+        if (hasDistemper.value == "Yes") {
+            distemperYear.style.display = "block";
+        } else {
+            distemperYear.style.display = "none";
+        }
+    }
+
+
 </script>
 <form action="animalIntakePost.php" method="post">
     <!-- Date field for current date entered by selecting a date in a calendar -->
-    <label>Date:</label><input type="date" name="date"><br>
-
+    <label>Date:</label><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"><br>
     <!-- Dropdown selection for selecting animal type -->
     <label>Animal Type:</label>
     <select name="type">
@@ -53,16 +73,16 @@ include("navbar.php");
     <label>Altered:</label>
     <select name="altered">
         <option value=""></option>
-        <option value="Y">Y</option>
-        <option value="N">N</option>
+        <option value="Yes">Y</option>
+        <option value="No">N</option>
     </select><br>
 
     <!-- Dropdown selection for selecting whether animal has a microchip -->
     <label>Microchip:</label>
     <select name="microchip">
         <option value=""></option>
-        <option value="Y">Y</option>
-        <option value="N">N</option>
+        <option value="Yes">Y</option>
+        <option value="No">N</option>
     </select><br>
 
     <!-- Field indicating whether animal has been brought in by an animal control
@@ -76,28 +96,34 @@ include("navbar.php");
 
     <!-- Dropdown selection for selecting whether animal has had rabies vaccination -->
     <label>Rabies Vaccination:</label>
-    <select name="rabiesVacc">
+    <select id="rabiesVacc" name="rabiesVacc" onchange="showRabiesInfo()">
         <option value=""></option>
-        <optionvalue="Y">Y</option>
-            <option value="N">N</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select><br>
 
-    <label for="rabiesYear">Rabies Year:</label>
-    <input type="text" id="rabiesYear" name="rabiesYear"><br><br>
+    <!-- If the animal has had a rabies vaccination, display field for the year -->
+    <div id="rabiesYear" style="display:none">
+        <label>Rabies Vaccination Year:</label><input type="text" name="rabiesYear"><br>
+    </div>
 
-    <label for="distempVacc">Distemper Vaccination:</label>
-    <select id="distempVacc" name="distempVacc">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select><br><br>
+    <!-- Dropdown selection for selecting whether animal has had distemper vaccination -->
+    <label>Distemper Vaccination:</label>
+    <select id="distempVacc" name="distempVacc" onchange="showDistemperInfo()">
+        <option value=""></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select><br>
 
-    <label for="distempYear">Distemper Year:</label>
-    <input type="text" id="distempYear" name="distempYear"><br><br>
-
+    <!-- If the animal has had a distemper vaccination, display field for the year -->
+    <div id="distempYear" style="display:none">
+        <label>Distemper Vaccination Year:</label><input type="text" name="distemperYear"><br>
+    </div>
     <label for="spayedNeutered">Spayed/Neutered:</label>
     <select id="spayedNeutered" name="spayedNeutered">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value=""></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select><br><br>
 
     <label for="tagNumber">Tag Number:</label>

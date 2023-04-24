@@ -36,6 +36,9 @@ $auction_result = mysqli_query($dbconnection, $auction_query);
 // display tables
 ?>
 
+<head>
+	<link rel='stylesheet' href='StyleSheets/reports.css'>
+</head>
 <h2>Adopted / Reclaimed Animals</h2>
 <table>
 	<thead>
@@ -69,13 +72,13 @@ $auction_result = mysqli_query($dbconnection, $auction_query);
 					<?php echo $row['address']; ?>
 				</td>
 				<td>
-					<?php echo $row['city'];?>
-                </td>
+					<?php echo $row['city']; ?>
+				</td>
 				<td>
-					<?php echo $row['state'];?>
-                </td>
+					<?php echo $row['state']; ?>
+				</td>
 				<td>
-					<?php echo $row['zip'];?>
+					<?php echo $row['zip']; ?>
 				</td>
 			</tr>
 		<?php } ?>
@@ -115,13 +118,13 @@ $auction_result = mysqli_query($dbconnection, $auction_query);
 					<?php echo $row['address']; ?>
 				</td>
 				<td>
-					<?php echo $row['city'];?>
-                </td>
+					<?php echo $row['city']; ?>
+				</td>
 				<td>
-					<?php echo $row['state'];?>
-                </td>
+					<?php echo $row['state']; ?>
+				</td>
 				<td>
-					<?php echo $row['zip'];?>
+					<?php echo $row['zip']; ?>
 				</td>
 			</tr>
 		<?php } ?>
@@ -160,13 +163,13 @@ $auction_result = mysqli_query($dbconnection, $auction_query);
 					<?php echo $row['address']; ?>
 				</td>
 				<td>
-					<?php echo $row['city'];?>
-                </td>
+					<?php echo $row['city']; ?>
+				</td>
 				<td>
-					<?php echo $row['state'];?>
-                </td>
+					<?php echo $row['state']; ?>
+				</td>
 				<td>
-					<?php echo $row['zip'];?>
+					<?php echo $row['zip']; ?>
 				</td>
 			</tr>
 		<?php } ?>

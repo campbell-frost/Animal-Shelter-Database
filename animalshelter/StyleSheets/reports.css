@@ -1,17 +1,88 @@
-table, th, td {
-  border: 1px solid black;
+table {
   border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
 }
-table{
-width: 100%;
+
+th, td {
+  text-align: left;
+  padding: 8px;
 }
-td {
-  text-align: center;
-  margin-left: 10px;
-}
+
 th {
-  background-color: #7A828B;
+  background-color: #5FB0B6;
   color: white;
-  padding-left: 10px;
 }
-tr:nth-child(even) {background-color: #f2f2f2;}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+@media only screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    border: none;
+    background-color: #5FB0B6;
+    color: white;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Animal Name";
+  }
+
+  td:nth-of-type(2):before {
+    content: "Exit Reason";
+  }
+
+  td:nth-of-type(3):before {
+    content: "Owner Name";
+  }
+
+  td:nth-of-type(4):before {
+    content: "Owner Phone";
+  }
+
+  td:nth-of-type(5):before {
+    content: "Address";
+  }
+
+  td:nth-of-type(6):before {
+    content: "City";
+  }
+
+  td:nth-of-type(7):before {
+    content: "State";
+  }
+
+  td:nth-of-type(8):before {
+    content: "Zip";
+  }
+}

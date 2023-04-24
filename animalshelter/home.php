@@ -10,7 +10,7 @@
       <p>Ronisha Genwright</p>
     </div>
     <div>
-      <img src="Images/scrumdeasy.jfif" alt="Scrumdeasy">
+      <img src="Images/scrumdeasy.jpg" alt="Scrumdeasy">
       <p>Campbell Frost</p>
     </div>
     <div>
