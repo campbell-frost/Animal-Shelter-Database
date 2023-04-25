@@ -1,7 +1,7 @@
 <?php
 include("navbar.php");
 ?>
-<link rel="stylesheet" type="text/css" href="StyleSheets/animalIntake.css?v=2">
+<link rel="stylesheet" type="text/css" href="StyleSheets/animalIntake.css?v=6">
 <script>
     function showOwnerInfo() {
         var hasOwner = document.getElementById("hasOwner");
@@ -34,7 +34,10 @@ include("navbar.php");
 
 
 </script>
+<h1>Animal Intake</h1>  
 <form action="animalIntakePost.php" method="post">
+    <br>
+
     <!-- Date field for current date entered by selecting a date in a calendar -->
     <label>Date:</label><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"><br>
     <!-- Dropdown selection for selecting animal type -->
@@ -48,9 +51,6 @@ include("navbar.php");
 
     <!-- Animal name field entered in a textbox -->
     <label>Animal Name:</label><input type="text" name="name"><br>
-
-    <!-- Date of birth field entered by selecting a date in a calendar -->
-    <label>Date of Birth:</label><input type="date" name="dateOfBirth"><br>
 
     <!-- Dropdown selection for selecting animal sex -->
     <label>Sex:</label>
@@ -94,43 +94,6 @@ include("navbar.php");
     <label>Location:</label><input type="text" name="location">
     <p>(Shelter Cage number or Veterinarian number if animal is housed off-site)</p><br>
 
-    <!-- Dropdown selection for selecting whether animal has had rabies vaccination -->
-    <label>Rabies Vaccination:</label>
-    <select id="rabiesVacc" name="rabiesVacc" onchange="showRabiesInfo()">
-        <option value=""></option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-    </select><br>
-
-    <!-- If the animal has had a rabies vaccination, display field for the year -->
-    <div id="rabiesYear" style="display:none">
-        <label>Rabies Vaccination Year:</label><input type="text" name="rabiesYear"><br>
-    </div>
-
-    <!-- Dropdown selection for selecting whether animal has had distemper vaccination -->
-    <label>Distemper Vaccination:</label>
-    <select id="distempVacc" name="distempVacc" onchange="showDistemperInfo()">
-        <option value=""></option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-    </select><br>
-
-    <!-- If the animal has had a distemper vaccination, display field for the year -->
-    <div id="distempYear" style="display:none">
-        <label>Distemper Vaccination Year:</label><input type="text" name="distemperYear"><br>
-    </div>
-    <label for="spayedNeutered">Spayed/Neutered:</label>
-    <select id="spayedNeutered" name="spayedNeutered">
-        <option value=""></option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-    </select><br><br>
-
-    <label for="tagNumber">Tag Number:</label>
-    <input type="text" id="tagNumber" name="tagNumber"><br><br>
-
-    <label for="clinic">Clinic:</label>
-    <input type="text" id="clinic" name="clinic"><br><br>
 
     <!-- Field indicating whether animal has an owner which is entered in a textbox -->
     <label>Does the animal have an owner?</label>
@@ -148,6 +111,48 @@ include("navbar.php");
         <label>City:</label><input type="text" name="city"><br>
         <label>State:</label><input type="text" name="state"><br>
         <label>Zip:</label><input type="text" name="zip"><br>
+
+
+        <!-- Date of birth field entered by selecting a date in a calendar -->
+        <label>Date of Birth:</label><input type="date" name="dateOfBirth"><br>
+        <!-- Dropdown selection for selecting whether animal has had rabies vaccination -->
+        <label>Rabies Vaccination:</label>
+        <select id="rabiesVacc" name="rabiesVacc" onchange="showRabiesInfo()">
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <!-- If the animal has had a rabies vaccination, display field for the year -->
+        <div id="rabiesYear" style="display:none">
+            <label>Rabies Vaccination Year:</label><input type="text" name="rabiesYear"><br>
+        </div>
+
+        <!-- Dropdown selection for selecting whether animal has had distemper vaccination -->
+        <label>Distemper Vaccination:</label>
+        <select id="distempVacc" name="distempVacc" onchange="showDistemperInfo()">
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <!-- If the animal has had a distemper vaccination, display field for the year -->
+        <div id="distempYear" style="display:none">
+            <label>Distemper Vaccination Year:</label><input type="text" name="distemperYear"><br>
+        </div>
+        <label for="spayedNeutered">Spayed/Neutered:</label>
+        <select id="spayedNeutered" name="spayedNeutered">
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="tagNumber">Tag Number:</label>
+        <input type="text" id="tagNumber" name="tagNumber"><br><br>
+
+        <label for="clinic">Clinic:</label>
+        <input type="text" id="clinic" name="clinic"><br><br>
+
 
     </div>
 

@@ -1,56 +1,85 @@
-form {
+/* Form elements */
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
 
-  margin: 0 auto;
+input[type="text"],
+input[type="date"],
+form select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
   width: 300px;
-  padding: 0 50px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button,
+input[type="submit"] {
   background-color: #f2f2f2;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin-right: 10px;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
   margin-top: 10px;
-  margin-bottom: 20px;
+}
+form select {
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  background-color: white;
 }
 
 
-form label {
-  display: block; /* added */
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-weight: bold;
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #d9d9d9;
+}
+
+/* Body and containers */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   color: #333;
 }
-form input[type="text"],
-form input[type="date"],
-form select {
-padding: 5px;
-border-radius: 5px;
-border: none;
-width: 300px;
-height: 30px;
-margin-bottom: 10px;
+
+
+.container1 {
+  float: left;
+  width: 50%;
 }
 
-form select {
-margin-top: 10px;
-width: 305px;
+.container2 {
+  float: left;
+  width: 50%;
+}
+label[for="description"] {
+  display: block;
+  margin: 10px 0;
 }
 
-form p {
-
-font-size: 12px;
-color: #666;
-margin: 0;
-margin-bottom: 10px;
-}
-
-form input[type="submit"] {
-background-color: #4682B4;
-color: #fff;
-border: none;
-padding: 10px 20px;
-cursor: pointer;
-margin-top: 10px;
-}
-
-form input[type="submit"]:hover {
-background-color: #333;
+#description {
+  width: 100%;
 }

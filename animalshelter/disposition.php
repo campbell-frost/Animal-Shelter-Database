@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 <html>
-<link rel="stylesheet" type="text/css" href="StyleSheets/disposition.css">
+<link rel="stylesheet" type="text/css" href="StyleSheets/disposition.css?v=1">
 
 <head>
 	<title>Animal Disposition</title>

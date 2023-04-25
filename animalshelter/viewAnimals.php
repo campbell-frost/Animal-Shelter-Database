@@ -95,7 +95,7 @@ if (mysqli_num_rows($results) === 0) {
                         <?php echo $row['spayedNutered'] ?>
                     </td>
                     <td>
-                        <?php echo $row['owner_name']; ?>
+                    <?php echo $row['owner_name'] ? $row['owner_name'] : "N/A"; ?>
                     </td>
                     <td>
                         <?php echo $row['tagNumber']; ?>
@@ -106,52 +106,6 @@ if (mysqli_num_rows($results) === 0) {
                     <td><a class="edit-btn" href="editAnimal.php?animal_id=<?php echo $row['animal_ID']; ?>">Edit</a></td>
                 </tr>
             <?php } ?>
-            <?php if ($results2 && mysqli_num_rows($results2) > 0) {
-                while ($row2 = mysqli_fetch_assoc($results2)) { ?>
-                    <tr>
-                        <td>
-                            <?php echo $row2['animal_ID']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['type']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['dateOfBirth']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['sex']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['breed']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['color']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['weight']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['altered'] ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['microchip']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['spayedNutered'] == 'Yes' ? 'Yes' : 'No'; ?>
-                        </td>
-                        <td>
-                            <?php echo "N/A"; ?>
-                        </td>
-                        <td>
-                            <?php echo $row2['tagNumber']; ?>
-                        </td>
-                        <td>
-                            <?php echo "disposed"; ?>
-                        </td>
-                        <td><a class="edit-btn" href="editAnimal.php?animal_id=<?php echo $row['animal_ID']; ?>">Edit</a></td>
-
-                    </tr>
-                <?php }
-            } ?>
+        
         </tbody>
     </table>

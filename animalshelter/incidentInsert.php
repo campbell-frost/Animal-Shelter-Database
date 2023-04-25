@@ -1,11 +1,6 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$dbname = "animalshelter";
-
-
-$conn = mysqli_connect($server , $username , $password , $dbname);
+include("dbconnect");
+include("navbar.php");
 // Condition when the user clicks submit on the form
 if(isset($_POST['submit']))
 {
@@ -38,7 +33,7 @@ if(isset($_POST['submit']))
 
         
         // Incase query will not run it will throw an error
-        $run = mysqli_query($conn, $query) or die("Connection failed: " . mysqli_connect_error());
+        $run = mysqli_query($dbconnection, $query) or die("Connection failed: " . mysqli_connect_error());
 
         // If the query will run, we will submit a request that the form was submitted successfully
         if($run) 
