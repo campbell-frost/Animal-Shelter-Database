@@ -9,93 +9,183 @@
         $alpha_numeric = "/^[a-zA-Z0-9]+$/";
         $alpha = "/^[a-zA-Z]+$/";
         $numeric = "/^[0-9]+$/";
+        $weight = "/^[0-9.]+$/";
         $phone = "/^[0-9]{10}$/";
 
         // Validate the 'date' field
         if(!isset($_POST['date']) || empty($_POST['date']))
         {
-            $errors[] = "Date is required";
+            $errors['date'] = "Date is required!";
+        }
+
+        // Validate the 'name' field
+        if(!isset($_POST['name']) || empty($_POST['name']))
+        {
+            $errors['name'] = "Animal name is required!";
+        }
+        else if(!preg_match($alpha, $_POST['name']))
+        {
+            $errors['name'] = "Animal name should contain only alphabetical characters!";
+        }
+        else if(strlen($_POST['name']) > 50)
+        {
+            $errors['name'] = "Animal name can not be longer than 50 alphabetical characters!"
         }
 
         // Validate the 'type' field
         if(!isset($_POST['type']) || empty($_POST['type']))
         {
-            $errors[] = "Animal type is required";
-        }
-        else if(!preg_match($alpha, $_POST['type']))
-        {
-            $errors[] = "Animal type should contain only alphabetical characters";
+            $errors['type'] = "Animal type is required!";
         }
 
-        // Validate the 'name' field
+        // Validate the 'dateOfBirth' field
         if(!isset($_POST['dateOfBirth']) || empty($_POST['dateOfBirth']))
         {
-            $errors[] = "Date of birth is required";
+            $errors['dateOfBirth'] = "Date of birth is required!";
         }
 
         // Validate the 'sex' field
         if(!isset($_POST['sex']) || empty($_POST['sex']))
         {
-            $errors[] = "Sex is required";
+            $errors['sex'] = "Sex is required!";
         }
 
         // Validate the 'breed' field
         if(!isset($_POST['breed']) || empty($_POST['breed']))
         {   
-            $errors[] = "Breed is required";
+            $errors['breed'] = "Breed is required!";
         }
         else if(!preg_match($alpha_numeric, $POST['breed']))
         {
-            $errors[] = "Breed should contain only alphabetical characters and numbers";
+            $errors['breed'] = "Breed should contain only alphabetical characters and numbers!";
+        }
+        else if(strlen($_POST['breed']) > 50)
+        {
+            $errors['breed'] = "Breed can not be longer than 50 alphabetical characters!"
         }
 
         // Validate the 'color' field
         if(!isset($_POST['color']) || empty($_POST['color']))
         {
-            $errors[] = "Color is required";
+            $errors['color'] = "Color is required!";
         }
         else if(!preg_match($alpha, $_POST['color']))
         {
-            $errors[] = "Color should contain only alphabetical characters";
+            $errors['color'] = "Color should contain only alphabetical characters!";
+        }
+        else if(strlen($_POST['color']) > 50)
+        {
+            $errors['color'] = "Color can not be longer than 50 alphabetical characters!"
         }
 
         // Validate the 'weight' field
         if(!isset($_POST['weight']) || empty($_POST['weight']))
         {
-            $errors[] = "Weight is required";
+            $errors['weight'] = "Weight is required!";
         }
-        else if(!preg_match($numeric, $_POST['weight']))
+        else if(!preg_match($weight, $_POST['weight']))
         {
-            $errors[] = "Weight should contain only numbers";
+            $errors['weight'] = "Weight should contain only numbers and periods(.)!";
+        }
+        else if(strlen($_POST['weight']) > 6)
+        {
+            $errors['weight'] = "Weight can not be longer than 5 numerical characters and a period(.)!"
         }
 
         // Validate the 'altered' field
         if(!isset($_POST['altered']) || empty($_POST['altered']))
         {
-            $errors[] = "Altered is required";
+            $errors['altered'] = "Altered is required!";
         }
 
         // Validate the 'microchip' field
         if(!isset($_POST['microchip']) || empty($_POST['microchip']))
         {
-            $errors[] = "Microchip is required";
+            $errors['microchip'] = "Microchip is required!";
         }
 
         // Validate the 'broughtIn' field
         if(!isset($_POST['broughtIn']) || empty($_POST['broughtIn']))
         {
-            $errors[] = "Brought in by ACO or Citizen is required";
+            $errors['broughtIn'] = "Brought in by ACO or Citizen is required!";
         }
-        else if(!preg_match($alpha_numeric, $POST['breed']))
+        else if(!preg_match($alpha_numeric, $_POST['breed']))
         {
-            $errors[] = "Brought in by ACO or Citizen should contain only alphabetical characters and numbers";
+            $errors['broughtIn'] = "Brought in by ACO or Citizen should contain only alphabetical characters and numbers!";
         }
 
         // Validate the 'location' field
         if(!isset($_POST['location']) || empty($_POST['location']))
         {
-            $errors[] = "Location is required";
+            $errors['location'] = "Location is required!";
         }
+
+        // Validate the 'rabiesVacc' field
+        if(!isset($_POST['rabiesVacc']) || empty($_POST['rabiesVacc']))
+        {
+            $errors['rabiesVacc'] = "RabiesVacc is required!";
+        }
+
+        // Validate the 'rabiesYear' field
+        if(!isset($_POST['rabiesYear']) || empty($_POST['rabiesYear']))
+        {
+            $errors['rabiesYear'] = "Rabies year is required!";
+        }
+        else if(!preg_match($numeric, $_POST['rabeisYear']))
+        {
+            $errors['rabiesYear'] = "Rabies year must only contain numerical values!";
+        }
+
+        // Validate the 'distemperVacc' field
+        if(!isset($_POST['distemperVacc']) || empty($_POST['distemperVacc']))
+        {
+            $errors['distemperVacc'] = "DistemperVacc is required!";
+        }
+
+        // Validate the 'distemperYear' field
+        if(!isset($_POST['distemperYear']) || empty($_POST['distemperYear']))
+        {
+            $errors['distemperYear'] = "distemper year is required!";
+        }
+        else if(!preg_match($numeric, $_POST['distemperYear']))
+        {
+            $errors['distemperYear'] = "Distemper year must only contain numerical values!";
+        }
+
+        // Validate the 'spayed/Neutered' field
+        if(!isset($_POST['spayedNutered']) || empty($_POST['spayedNutered']))
+        {
+            $errors['spayedNutered'] = "spayed/Neutered is required!";
+        }
+
+        // Validate the 'tagNumber' field
+        if(!isset($_POST['tagNumber']) || empty($_POST['tagNumber']))
+        {
+            $errors['tagNumber'] = "Tag Number is required!";
+        }
+        else if(!preg_match($numeric, $_POST['tagNumber']))
+        {
+            $errors['tagNumber'] = "Tag Number must only contain numerical values!";
+        }
+        else if(strlen($_POST['tagNumber']) > 12)
+        {
+            $errors['tagNumber'] = "tagNumber can not be longer than 12 numerical characters!"
+        }
+
+        // Validate the 'clinic' field
+        if(!isset($_POST['clinic']) || empty($_POST['clinic']))
+        {
+            $errors['clinic'] = "clinic is required!";
+        }
+        else if(!preg_match($numeric, $_POST['clinic']))
+        {
+            $errors['clinic'] = "Clinic must only contain numerical values!";
+        }
+
+        // If owner is known:
+        // Check the validation of the ownerName, phone, email, address, city, state, zipcode 
+        return $errors;
+        //var_dump($errors);
 
     }
 ?>
