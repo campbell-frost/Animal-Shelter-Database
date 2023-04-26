@@ -109,7 +109,7 @@
         {
             $errors['broughtIn'] = "Brought in by ACO or Citizen is required!";
         }
-        else if(!preg_match($alpha_numeric, $_POST['breed']))
+        else if(!preg_match($alpha_numeric, $_POST['broughtIn']))
         {
             $errors['broughtIn'] = "Brought in by ACO or Citizen should contain only alphabetical characters and numbers!";
         }
@@ -118,6 +118,10 @@
         if(!isset($_POST['location']) || empty($_POST['location']))
         {
             $errors['location'] = "Location is required!";
+        }
+        else if(!preg_match($alpha, $_POST['location']))
+        {
+            $errors['location'] = "Location must only contain alphabetical characters!";
         }
 
         
@@ -132,7 +136,7 @@
         }
         else if(strlen($_POST['tagNumber']) > 12)
         {
-            $errors['tagNumber'] = "tagNumber can not be longer than 12 numerical characters!";
+            $errors['tagNumber'] = "Tag Number can not be longer than 12 numerical characters!";
         }
 
         // Validate the 'clinic' field
@@ -148,9 +152,7 @@
         return $errors;
         // If owner is known:
         // Check the validation of the ownerName, phone, email, address, city, state, zipcode 
-        
         //var_dump($errors);
-        
         // Validate the 'rabiesVacc' field
         /*if(!isset($_POST['rabiesVacc']) || empty($_POST['rabiesVacc']))
         {
