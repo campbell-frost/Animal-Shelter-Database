@@ -1,4 +1,6 @@
 <?php
+session_start();
+include("accountType.php");
 include("navbar.php");
 ?>
 <script>
