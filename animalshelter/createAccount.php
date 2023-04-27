@@ -9,10 +9,9 @@
 					<input type="text" id="username" name="username" placeholder="Username">
 					<input type="password" id="password" name="password" placeholder="Password">
 					<select name="accountType" id="accountType">
-						<option value="" disabled selected>Account Type</option>
 						<option value="Shelter Director">Shelter Director</option>
 						<option value="ACO Officer">ACO Officer</option>
-						<option value="Shelter Personnel">Shelter Personnel</option>
+						<option value="Administrative Assistant">Administrative Assistant</option>
 					</select>
 					</select><br><br>
 					<input type=submit value="Create Account">

@@ -5,10 +5,10 @@
 	$password=$_POST['password'];
 	$accountType=$_POST['accountType'];
 	// Validate username
-	if (strlen($username) !== 8)
+	if (strlen($username) < 8)
 	{
 		echo "<script>
-            window.alert('Please enter a valid username with exactly 8 characters.');
+            window.alert('Please enter a valid username with more than 8 characters.');
             history.back(1);
           </script>";
 		exit;

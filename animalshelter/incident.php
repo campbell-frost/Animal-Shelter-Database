@@ -1,5 +1,6 @@
 <?php
-include("navbar.php");
+session_start();
+include("accountType.php");
 ?>
 <script>
     var timeInput = document.getElementById("timeInput")
