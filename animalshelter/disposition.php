@@ -1,4 +1,6 @@
 <?php
+session_start();
+include("accountType.php");
 include('dbconnect.php');
 include('navbar.php');
 // Connect to the database
