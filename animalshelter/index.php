@@ -17,7 +17,7 @@
             <option value="" disabled selected>Account Type</option>
             <option value="Shelter Director">Shelter Director</option>
             <option value="ACO Officer">ACO Officer</option>
-            <option value="Administrative Assistant">Administrative Assistant</option>
+            <option value="Shelter Personnel">Shelter Personnel</option>
           </select>
 
           </select><br>

@@ -1,8 +1,7 @@
 <?php
 // connect to database
-session_start();
 include('dbconnect.php');
-include("accountType.php");
+include('navbar.php');
 if (!$dbconnection) {
 	die("Connection failed: " . mysqli_connect_error());
 }
@@ -59,10 +58,10 @@ $auction_result = mysqli_query($dbconnection, $auction_query);
 			<?php while ($row = mysqli_fetch_assoc($incident_result)) { ?>
 				<tr>
 					<td>
-						<?php echo $row['badge_number']; ?>
+						<?php echo $row['badgeNumber']; ?>
 					</td>
 					<td>
-						<?php echo $row['incident_id']; ?>
+						<?php echo $row['incident_ID']; ?>
 					</td>
 					<td>
 						<?php echo $row['date']; ?>

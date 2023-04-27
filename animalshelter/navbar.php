@@ -1,10 +1,14 @@
 <html>
-<link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css?v=2">
-<meta name = "viwport" content ="width=device-width, initial-scale="1.0">
+  <head>
+    <title>Indian Lake Animal Shelter</title>
+        <link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css?v=2">
+    <meta name = "viwport" content ="width=device-width, initial-scale="1.0">
+  </head>
+  
 <body>
   <div id="banner">
-    <div id="title"><a href="home.php">Indian Lake Animal Shelter</a></div>
-       <div id="buttons">
+    <div id="title">Indian Lake Animal Shelter</div>
+    	<div id="buttons">
       <button id="create-account-button">Create Account</button>
       <button id="login-button">Login</button>
       <button id="logout-button">Logout</button>
@@ -21,7 +25,8 @@
     </ul>
   
 </body>
-</div>  
+  
+  </div>  
 </html>
 <script>
   document.getElementById("create-account-button").addEventListener("click", function() {

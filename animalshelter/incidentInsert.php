@@ -1,59 +1,58 @@
 <?php
-include("dbconnect");
-include("navbar.php");
-// Condition when the user clicks submit on the form
-if(isset($_POST['submit']))
-{
-    // Checks that the required fields are completed
-    if(!empty($_POST['badgeNumber']) && !empty($_POST['intakeNumber']) && !empty($_POST['date']) && !empty($_POST['time']) && !empty($_POST['weather']) && !empty($_POST['type']) && !empty($_POST['sex']) && !empty($_POST['color']) && !empty($_POST['description']))
+session_start();
+include("accountType.php");
+include("dbconnect.php");
 
-    {
-        // Values entered in the form by the user
-        $badgeNumber = $_POST['badgeNumber'] ;
-        $intakeNumber = $_POST['intakeNumber'] ;
-        $date = $_POST['date'] ;
-        $time = $_POST['time'] ;
-        $weather = $_POST['weather'] ;
-        $type = $_POST['type'] ;
-        $sex = $_POST['sex'] ;
-        $color = $_POST['color'] ;
-        $owner = $_POST['owner'] ;
-        $phone = $_POST['phone'] ;
-        $address = $_POST['address'] ;
-        $city = $_POST['city'] ;
-        $state = $_POST['state'] ;
-        $zipcode = $_POST['zipcode'] ;
-        $description = $_POST['description'] ;       
+// Action that is taken when the user clicks 'submit' on the form for the animal intake page
+if (isset($_POST['submit'])) {
+    // Action that is taken when the fields for 'name', 'breed', 'color', and 'type' are filled in the animal intake page
+    if (!empty($_POST['badgeNumber'])) {
+        // Get animal information
+        $badgeNumber = $_POST['badgeNumber'];
+        $incident_id = $_POST['intakeNumber'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $weather = $_POST['weather'];
+        $description = $_POST['description'];
+        $animal_id = $_POST['animal_id'];
 
-        // Form a query passing in the values from the user to the form attributes
-        $query = "insert into incidentreport(badgeNumber, intakeNumber, date, time, weather, type, 
-        sex, color, owner, phone, address, city, state, zipcode, description) values('$badgeNumber', 
-        '$intakeNumber', '$date', '$time', '$weather', '$type', '$sex', '$color', '$owner', '$phone', 
-        '$address', '$city', '$state', '$zipcode', '$description')";
 
-        
-        // Incase query will not run it will throw an error
-        $run = mysqli_query($dbconnection, $query) or die("Connection failed: " . mysqli_connect_error());
+           // Insert animal information into the animal table with owner ID
+           $insertIncidentQuery = "INSERT INTO incident (badgeNumber, incident_ID, date, time, weather, description, animal_ID) VALUES ('$badgeNumber', '$incident_id', '$date', '$time', '$weather','$description', '$animal_id')";           
+           if (!mysqli_query($dbconnection, $insertQuery)) {
+              die('Error: ' . mysqli_error($dbconnection));
+          }
+        // Check if the user entered owner information
+        if ($_POST['hasOwner'] == 'Yes') {
+            $ownerName = $_POST['ownerName'];
+            $ownerPhone = $_POST['phone'];
+            $ownerAddress = $_POST['address'];
+            $ownerCity = $_POST['city'];
+            $ownerState = $_POST['state'];
+            $ownerZip = $_POST['zip'];
 
-        // If the query will run, we will submit a request that the form was submitted successfully
-        if($run) 
-        {
-            echo " Form submitted successfully";
+            // Insert owner information into the owner table
+            $insertOwnerQuery = "INSERT INTO owner (name, phone, address, city, state, zip) VALUES ('$ownerName', '$ownerPhone', '$ownerAddress', '$ownerCity', '$ownerState', '$ownerZip')";
+            if (!mysqli_query($dbconnection, $insertOwnerQuery)) {
+                die('Error: ' . mysqli_error($dbconnection));
+            }
+            echo $insertOwnerQuery;
+
+            // Get the ID of the newly inserted owner
+            $ownerId = mysqli_insert_id($dbconnection);
+
+         
+
+            // Redirect to the success page
+            header('Location: reports.php');
+        } else {
+            
+            header('Location: reports.php');
         }
-
-        // If the query does not run, form was not submitted successfully
-        else
-        {
-            echo "Form not submitted";
-        }
+    } else {
+echo "error";
     }
-    // If error occurs, then this notifies that the form was not completed entirely
-    else 
-    {
-        echo " all fields required" ;
-    }
-
+} else {
+    echo "error";
 }
-
-
 ?>

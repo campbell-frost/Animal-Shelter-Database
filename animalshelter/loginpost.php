@@ -36,7 +36,6 @@
 		</script>";
 		exit;
 	}
-	$_SESSION['accountType'] = $accountType;
 	mysqli_close($dbconnection);
 ?>
 <script>

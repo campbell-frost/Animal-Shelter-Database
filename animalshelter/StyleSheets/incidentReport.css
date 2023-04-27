@@ -27,7 +27,7 @@ form select {
 }
 
 button,
-input[type="submit"] {
+input[type="submit"], #hasOwner  {
   background-color: #f2f2f2;
   border: 1px solid #000;
   border-radius: 3px;
@@ -66,15 +66,20 @@ body {
 }
 
 
-.container1 {
+.incident {
+  float: left;
+  width: 50%;
+}
+#ownerDropdown {
+  float: right;
+  width: 50%;
+}
+
+.incident2 {
   float: left;
   width: 50%;
 }
 
-.container2 {
-  float: left;
-  width: 50%;
-}
 label[for="description"] {
   display: block;
   margin: 10px 0;

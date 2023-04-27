@@ -1,13 +1,24 @@
 <?php
-session_start();
-include("accountType.php");
+include("navbar.php");
 ?>
 <script>
     var timeInput = document.getElementById("timeInput")
     var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     timeInput.value = currentTime;
+
+
+    function showOwnerInfo() {
+        var hasOwner = document.getElementById("hasOwner");
+        var ownerInfo = document.getElementById("ownerInfo");
+        if (hasOwner.value == "Yes") {
+            ownerInfo.style.display = "block";
+        } else {
+            ownerInfo.style.display = "none";
+        }
+    }
+
 </script>
-<link rel="stylesheet" type="text/css" href="StyleSheets/incidentReport.css?v=4">
+<link rel="stylesheet" type="text/css" href="StyleSheets/incidentReport.css?v=6">
 <html>
 
 <head>
@@ -17,7 +28,7 @@ include("accountType.php");
 <body>
     <h1>Incident Report</h1>
     <div class="container">
-        <div class="container1">
+        <div class="incident">
             <form action="incidentInsert.php" method="post">
                 <!-- Animal Control Officer Badge Number -->
                 <label>ACO Badge Number:</label><input type="text" name="badgeNumber"><br>
@@ -32,6 +43,7 @@ include("accountType.php");
                 <label>Time:</label><input type="time" name="time" id="timeInput"><br>
                 <!-- Description of weather when animal is being collected  -->
                 <label>Weather:</label><input type="text" name="weather"><br>
+                <label>Animal ID</label><input type = "text" name="animal_id"><br>
                 <label>Animal Type:</label>
                 <select name="type">
                     <option value=""></option>
@@ -48,13 +60,20 @@ include("accountType.php");
                     <option value="F">F</option>
                 </select><br>
         </div>
-        <div class="container2">
+        <div class="incident2">
             <!-- Color of animal field entered in a textbox -->
             <label>Color:</label><input type="text" name="color"><br>
 
             <!-- Name of owner of animal field entered in a textbox -->
-            <label>Animal Owner (if known):</label><input type="text" name="owner"><br>
+            <label>Does the animal have an owner?</label>
+            <select name="hasOwner" id="hasOwner" onchange="showOwnerInfo()">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+            <div id="ownerInfo" style="display:none;">
 
+            <label>Owner Name:</label><input type="text" name="ownerName"><br>
             <!-- Phone number of animal owner field entered in a textbox -->
             <label>Phone Number:</label><input type="text" name="phone"><br>
 
@@ -69,7 +88,7 @@ include("accountType.php");
 
             <!-- Zipcode of animal owner field entered in a textbox -->
             <label>Zipcode:</label><input type="text" name="zipcode"><br>
-
+            </div>
         </div>
         <!-- Textbox for the description of the circumstances surrounding when an animal is collected
          and the amount of text displayed will have a maximun compacity of 5 rows and 50 columns -->
