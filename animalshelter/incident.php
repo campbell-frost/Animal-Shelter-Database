@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("accountType.php");
+include("incidentInsert.php");
 ?>
 <script>
     var timeInput = document.getElementById("timeInput")
@@ -19,7 +20,7 @@ include("accountType.php");
     }
 
 </script>
-<link rel="stylesheet" type="text/css" href="StyleSheets/incidentReport.css?v=6">
+<link rel="stylesheet" type="text/css" href="StyleSheets/incidentReport.css?v=8">
 <html>
 
 <head>
@@ -31,12 +32,12 @@ include("accountType.php");
     <div class="container">
         <div class="incident">
             <form action="incidentInsert.php" method="post">
-                <!-- Animal Control Officer Badge Number -->
-                <label>ACO Badge Number:</label><input type="text" name="badgeNumber"><br>
-
-                <!-- Animal Intake Number text field-->
+			    <!-- Animal Intake Number text field-->
                 <label>Intake Number:</label><input type="text" name="intakeNumber"><br>
 
+                <!-- Animal Control Officer Badge Number -->
+                <label>ACO Badge Number:</label><input type="text" name="badgeNumber"><br>
+        
                 <!-- Current date text field -->
                 <label>Date:</label><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"><br>
 
@@ -44,7 +45,11 @@ include("accountType.php");
                 <label>Time:</label><input type="time" name="time" id="timeInput"><br>
                 <!-- Description of weather when animal is being collected  -->
                 <label>Weather:</label><input type="text" name="weather"><br>
-                <label>Animal ID</label><input type = "text" name="animal_id"><br>
+				<label for="animal_id">Animal Name:</label>
+				<select name="animal_id" id="animal_id">
+				<?php echo $animal_options; ?>
+				</select>
+				<br>
                 <label>Animal Type:</label>
                 <select name="type">
                     <option value=""></option>
@@ -102,7 +107,7 @@ include("accountType.php");
     </div>
 
     <!-- Submit button user clicks to add the information from completed form to the database -->
-    <button type="submit" name="submit">Submit</button>
+    <button class="button-container" type="submit" name="submit">Submit</button>
 
 
 </body>

@@ -6,61 +6,43 @@ label {
   padding-right: 10px;
   margin-bottom: 10px;
 }
-
-input[type="text"],
-input[type="date"] {
-  display: inline-block;
-  width: 200px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  padding: 5px;
-  border: 1px solid #ccc;
+h1
+{
+	text-align: center;
+}
+.total-button, .submitAdopted{
+  background-color: #f2f2f2;
+  border: 1px solid #000;
   border-radius: 3px;
-  box-sizing: border-box;
+  margin-right: 10px;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+
 }
 
-/* Buttons */
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-
-button:hover,
-input[type="submit"]:hover {
+.total-button:hover,.submitAdopted:hover {
   background-color: #d9d9d9;
 }
 
-/* Body and containers */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-}
 
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.owner-container {
-  width: 45%;
-}
-
-.fee-container {
-  width: 45%;
-}
-
-.recovery-container {
+.recovery-container, .adoption-container, .owner-container {
   display: block;
   width: 45%;
-}
-
-.adoption-container {
-  display: block;
-  width: 45%;
+  margin: 0 auto;
+  padding: 12px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: white;
+  font-weight: bold;
+text-align: left;
 }

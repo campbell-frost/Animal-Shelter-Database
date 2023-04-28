@@ -8,6 +8,15 @@ if (!$dbconnection) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
+    // Define regular expressions to match against user input
+    $alpha_numeric = "/^[a-zA-Z0-9]+$/";
+	$address_regex = "/^[a-zA-Z0-9 ]+$/";
+    $alpha_w_space = "/^[a-zA-Z ]+$/";
+    $alpha = "/^[a-zA-Z]+$/";
+    $numeric = "/^[0-9]+$/";
+    $weight = "/^[0-9.]+$/";
+    $phone_regex = "/^[0-9]{10}$/";
+
 // Retrieve animal IDs from the database
 $animalSQL = "SELECT animal_ID, name FROM animal";
 $result = mysqli_query($dbconnection, $animalSQL);
@@ -30,6 +39,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$state = $_POST['state'];
 	$zip = $_POST['zip'];
 
+	if(!preg_match($numeric, $animal_id))
+            {
+                echo "<script>
+                window.alert('Animal ID is required and can only contain numerical!');
+                history.back(1);
+            </script>";
+                exit;        
+            }
+		if(!preg_match($alpha, $name))
+		{
+			echo "<script>
+                window.alert('Name is required and can only alpabetical letters!');
+                history.back(1);
+            </script>";
+                exit; 
+			}
+            if(!preg_match($phone_regex, $phone))
+            {
+                echo "<script>
+                window.alert('Phone can only contain up to 10 numerical values!');
+                history.back(1);
+            </script>";
+                exit;        
+            }
+            if(!preg_match($address_regex, $address))
+            {
+                echo "<script>
+                window.alert('Address can only contain Alphabetical characters and numerical values!');
+                history.back(1);
+                </script>";
+                exit;            
+            }
+            if(!empty($city) && !preg_match($alpha, $city))
+            {
+                echo "<script>
+                window.alert('City is required and can only contain alphabetical characters!');
+                history.back(1);
+                </script>";
+                exit;            
+            }
+            if(!empty($state) && !preg_match($alpha, $state) && strlen($state) > 2)
+            {
+                echo "<script>
+                window.alert('State is required and must be abbreviated while only containing alphabetical characters!');
+                history.back(1);
+                </script>";
+                exit;            
+            }
+            else if(!empty($zip) && !preg_match($numeric, $zip))
+            {
+                echo "<script>
+                window.alert('Zip is required and should only contain numerical values!');
+                history.back(1);
+                </script>";
+                exit;
+            }
 
 	// Insert owner information into the database
 	$sql = "INSERT INTO owner (name, phone, address, city, state, zip) VALUES ('$name', '$phone', '$address', '$city', '$state', '$zip')";
@@ -68,10 +133,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<br>
 		<label for="exit_reason">Exit Reason:</label>
 		<select name="exit_reason" id="exit_reason">
-			<option value="adopted">Adopted</option>
-			<option value="reclaimed">Reclaimed</option>
-			<option value="auction">Auction</option>
-			<option value="euthanized">Euthanized</option>
+			<option value="Adopted">Adopted</option>
+			<option value="Reclaimed">Reclaimed</option>
+			<option value="Auctioned">Auction</option>
+			<option value="Euthanized">Euthanized</option>
 		</select>
 		<br>
 		<label for="name">Name:</label>

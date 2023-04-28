@@ -6,6 +6,15 @@ session_start();
 include('accountType.php');
 include('dbconnect.php');
 
+    // Define regular expressions to match against user input
+    $alpha_numeric = "/^[a-zA-Z0-9]+$/";
+    $address_regex = "/^[a-zA-Z0-9 ]+$/";
+    $alpha_w_space = "/^[a-zA-Z ]+$/";
+    $alpha = "/^[a-zA-Z]+$/";
+    $numeric = "/^[0-9]+$/";
+    $weight = "/^[0-9.]+$/";
+    $phone = "/^[0-9]{10}$/";
+
 // Check if animal ID is set
 if (isset($_GET['animal_id'])) {
   // Get animal ID from URL
@@ -56,6 +65,136 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $tagnumber = $_POST['TagNumber'];
   $clinic = $_POST['clinic'];
 
+  if(!empty($name) && !preg_match($alpha, $name))
+        {
+            echo "<script>
+            window.alert('Animal name can only contain alphabetical characters!');
+            history.back(1);
+          </script>";
+		    exit;
+        }
+        
+        else if(!empty($breed) && !preg_match($alpha, $breed))
+        {
+            echo "<script>
+            window.alert('Breed can only contain alphabetical characters.');
+            history.back(1);
+          </script>";
+		    exit;        
+        }
+        else if(!empty($color) && !preg_match($alpha, $color))
+        {
+            echo "<script>
+            window.alert('Color can only contain alphabetical characters.');
+            history.back(1);
+          </script>";
+		    exit;
+        }
+        else if(!empty($sex) && !preg_match($alpha, $sex) && strlen($sex) > 1)
+        {
+            echo "<script>
+            window.alert('Color can only contain alphabetical characters.');
+            history.back(1);
+          </script>";
+		    exit;
+        }
+        else if(!empty($broughtIn) && !preg_match($alpha_numeric, $broughtIn))
+        {
+            echo "<script>
+            window.alert('BroughtIn can only contain alphabetical characters for citizen name or numerical values for the badge number.');
+            history.back(1);
+          </script>";
+		    exit;        
+        }
+        else if(!empty($broughtIn) && !preg_match($numeric, $weight))
+        {
+            echo "<script>
+            window.alert('Weight can only contain numerical values.');
+            history.back(1);
+          </script>";
+		    exit;        
+        }
+        else if(!preg_match($alpha, $location))
+        {
+            echo "<script>
+            window.alert('Location can only contain alphabetical characters!');
+            history.back(1);
+          </script>";
+		    exit;        
+        }
+            else if(!preg_match($alpha, $distempervacc))
+            {
+              echo "<script>
+                window.alert('DistemperVacc can only contain yes or no!');
+                history.back(1);
+              </script>";
+                exit;
+            }
+            else if(!preg_match($alpha, $rabiesvacc))
+            {
+              echo "<script>
+                window.alert('Rabiesvacc can only contain yes or no!');
+                history.back(1);
+              </script>";
+                exit;
+            }
+            else if(!preg_match($numeric, $rabiesyear) && strlen($rabiesyear) > 4)
+            {
+              echo "<script>
+                window.alert('rabiesYear can only contain 4 numerical values!');
+                history.back(1);
+              </script>";
+                exit;
+            }
+            else if(!preg_match($numeric, $distemperYear) && strlen($distemperyear) > 4)
+            {
+              echo "<script>
+                window.alert('DistemperYear can only contain 4 numerical values!');
+                history.back(1);
+              </script>";
+                exit;
+            }
+            else if(!empty($spayedNutered))
+            {
+                echo "<script>
+                window.alert('spayedNeutered is required!');
+                history.back(1);
+            </script>";
+                exit;
+            }
+            else if(!preg_match($numeric, $tagnumber))
+            {
+                echo "<script>
+                window.alert('Tag number can only contain numerical values!');
+                history.back(1);
+            </script>";
+                exit;            
+            }
+            else if(!empty($TagNumber))
+            {
+                echo "<script>
+                window.alert('Tag number is required!');
+                history.back(1);
+            </script>";
+                exit;
+            }
+            if(!empty($clinic) && !preg_match($alpha_w_space, $clinic)) 
+            {
+              echo "<script>
+                  window.alert('Clinic name can only contain alphabetical characters and spaces!');
+                  history.back(1);
+              </script>";
+              exit;  
+           }
+           /* else if(!empty($clinic))
+            {
+                echo "<script>
+                window.alert('Clinic is required!');
+                history.back(1);
+            </script>";
+                exit;
+            }*/
+
 
   // Update animal information in database
   $query = "UPDATE animal SET Name = '$name', Type = '$type', Date = '$date', DateOfBirth = '$dob', Sex = '$sex', Breed = '$breed', Color = '$color', Weight = '$weight', Altered = '$altered', Microchip = '$microchip', Broughtin = '$broughtin', Location = '$location', RabiesVacc = '$rabiesvacc', RabiesYear = '$rabiesyear', DistemperVacc = '$distempervacc', DistemperYear = '$distemperyear', SpayedNutered = '$spayedneutered', TagNumber = '$tagnumber', Clinic = '$clinic'  WHERE Animal_ID = $animal_id";
@@ -79,17 +218,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-  <title>Edit Animal</title>
   <link rel="stylesheet" type="text/css" href="StyleSheets/editAnimal.css?v=2">
 </head>
 
 <body>
   <h1>Edit Animal</h1>
   <form method="post" action="">
-
     <div class="button-container">
-      <button onclick="history.back()">Back</button>
-      <input type="submit" value="Save">
+	  <a class="uniqueButton" href="reports.php">Back</a>
+      <input class="uniqueButton" type="submit" value="Save">
     </div>
     <br>
     <div class="container">
@@ -138,5 +275,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" id="clinic" name="clinic" value="<?php echo $animal['clinic']; ?>"><br>
       </div>
     </div>
-
 </html>

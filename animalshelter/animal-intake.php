@@ -2,39 +2,54 @@
 session_start();
 include("accountType.php");
 ?>
-<link rel="stylesheet" type="text/css" href="StyleSheets/animalIntake.css?v=6">
+<link rel="stylesheet" type="text/css" href="StyleSheets/animalIntake.css?v=7">
 <script>
+    // This function shows or hides the owner information section based on the value of the "hasOwner" field
     function showOwnerInfo() {
+        // Get the "hasOwner" field element
         var hasOwner = document.getElementById("hasOwner");
+        // Get the "ownerInfo" section element
         var ownerInfo = document.getElementById("ownerInfo");
+        // If the "hasOwner" field value is "Yes", show the "ownerInfo" section
         if (hasOwner.value == "Yes") {
             ownerInfo.style.display = "block";
         } else {
+            // Otherwise, hide the "ownerInfo" section
             ownerInfo.style.display = "none";
         }
     }
+
+    // This function shows or hides the rabies information section based on the value of the "rabiesVacc" field
     function showRabiesInfo() {
+        // Get the "rabiesVacc" field element
         var hasRabies = document.getElementById("rabiesVacc");
+        // Get the "rabiesYear" section element
         var rabiesYear = document.getElementById("rabiesYear");
+        // If the "rabiesVacc" field value is "Yes", show the "rabiesYear" section
         if (hasRabies.value == "Yes") {
             rabiesYear.style.display = "block";
         } else {
+            // Otherwise, hide the "rabiesYear" section
             rabiesYear.style.display = "none";
         }
     }
 
+    // This function shows or hides the distemper information section based on the value of the "distempVacc" field
     function showDistemperInfo() {
+        // Get the "distempVacc" field element
         var hasDistemper = document.getElementById("distempVacc");
+        // Get the "distempYear" section element
         var distemperYear = document.getElementById("distempYear");
+        // If the "distempVacc" field value is "Yes", show the "distempYear" section
         if (hasDistemper.value == "Yes") {
             distemperYear.style.display = "block";
         } else {
+            // Otherwise, hide the "distempYear" section
             distemperYear.style.display = "none";
         }
     }
-
-
 </script>
+
 <h1>Animal Intake</h1>  
 <form action="animalIntakePost.php" method="post">
     <br>
