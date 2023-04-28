@@ -1,6 +1,4 @@
 <?php
-session_start();
-include("accountType.php");
 include("dbconnect.php");
 
 // Action that is taken when the user clicks 'submit' on the form for the animal intake page
@@ -19,7 +17,7 @@ if (isset($_POST['submit'])) {
 
            // Insert animal information into the animal table with owner ID
            $insertIncidentQuery = "INSERT INTO incident (badgeNumber, incident_ID, date, time, weather, description, animal_ID) VALUES ('$badgeNumber', '$incident_id', '$date', '$time', '$weather','$description', '$animal_id')";           
-           if (!mysqli_query($dbconnection, $insertQuery)) {
+           if (!mysqli_query($dbconnection, $insertIncidentQuery)) {
               die('Error: ' . mysqli_error($dbconnection));
           }
         // Check if the user entered owner information

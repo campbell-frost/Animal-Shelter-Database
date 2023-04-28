@@ -1,5 +1,4 @@
 <html>
-
 <head>
   <title>Indian Lake Animal Shelter</title>
   <link rel="stylesheet" type="text/css" href="StyleSheets/login.css?v=1">
@@ -14,10 +13,10 @@
           <input type="text" id="username" name="username" placeholder="Username">
           <input type="password" id="password" name="password" placeholder="Password">
           <select name="accountType" id="accountType">
-            <option value="" disabled selected>Account Type</option>
-            <option value="Shelter Director">Shelter Director</option>
+            <option value="">Account Type</option>
+            <option value="Administrative Assistant">Administrative Assistant</option>
             <option value="ACO Officer">ACO Officer</option>
-            <option value="Shelter Personnel">Shelter Personnel</option>
+            <option value="Shelter Director">Shelter Director</option>
           </select>
 
           </select><br>

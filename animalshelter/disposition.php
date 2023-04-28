@@ -1,10 +1,7 @@
 <?php
+include('dbconnect.php');
 session_start();
 include("accountType.php");
-include('dbconnect.php');
-include('navbar.php');
-// Connect to the database
-
 
 // Check connection
 if (!$dbconnection) {

@@ -1,6 +1,7 @@
 <?php
+session_start();
 include("dbconnect.php");
-include("navbar.php");
+include("accountType.php");
 
 $sql = "SELECT animal.animal_ID, animal.name, animal.type, animal.dateOfBirth, animal.sex, animal.breed, animal.color, animal.weight, animal.altered, animal.microchip, animal.spayedNutered, animal.tagNumber, disposition_ID, owner.name AS owner_name, IF((SELECT COUNT(*) FROM disposition WHERE disposition.animal_ID = animal.animal_ID AND disposition.disposition_id IS NOT NULL) > 0, 'Yes', 'No') AS disposed
             FROM animal

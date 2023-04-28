@@ -1,10 +1,6 @@
 <html>
-  <head>
-    <title>Indian Lake Animal Shelter</title>
-        <link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css?v=2">
-    <meta name = "viwport" content ="width=device-width, initial-scale="1.0">
-  </head>
-  
+<link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css?v=4">
+<meta name = "viwport" content ="width=device-width, initial-scale="1.0">
 <body>
   <div id="banner">
     <div id="title">Indian Lake Animal Shelter</div>

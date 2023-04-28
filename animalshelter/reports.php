@@ -1,7 +1,8 @@
 <?php
 // connect to database
 include('dbconnect.php');
-include('navbar.php');
+session_start();
+include('accountType.php');
 if (!$dbconnection) {
 	die("Connection failed: " . mysqli_connect_error());
 }

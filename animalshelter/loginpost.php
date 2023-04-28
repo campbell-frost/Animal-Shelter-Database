@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include("accountType.php");
 ?>
 
 <?php
@@ -36,6 +37,7 @@
 		</script>";
 		exit;
 	}
+	$_SESSION['accountType'] = $accountType;
 	mysqli_close($dbconnection);
 ?>
 <script>

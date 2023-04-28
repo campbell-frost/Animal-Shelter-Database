@@ -3,7 +3,7 @@
 session_start();
 
 // Include database connection file
-include('navbar.php');
+include('accountType.php');
 include('dbconnect.php');
 
 // Check if animal ID is set

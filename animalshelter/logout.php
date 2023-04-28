@@ -14,3 +14,8 @@
 	</div>
 </body>
 </html>
+<script>
+  setTimeout(function(){
+    window.location.href = "index.php";
+  }, 3500); //delay in milliseconds. 3500 = 3.5 seconds
+</script>

@@ -1,5 +1,6 @@
 <?php
-	include("navbar.php");
+session_start();
+include("accountType.php");
 ?>
 <link rel="stylesheet" type="text/css" href="StyleSheets/home.css?v=2">
 <p class="title"> Welcome to our Website! </p>
