@@ -12,6 +12,7 @@ if (!$dbconnection) {
 $alpha_numeric = "/^[a-zA-Z0-9]+$/";
 $address_regex = "/^[a-zA-Z0-9 ]+$/";
 $alpha_w_space = "/^[a-zA-Z ]+$/";
+$alpha_w_spaceNum= "/^[a-zA-Z0-9\s]+$/";
 $alpha = "/^[a-zA-Z]+$/";
 $numeric = "/^[0-9]+$/";
 $weight = "/^[0-9.]+$/";
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </script>";
 		exit;
 	}
-	if (!preg_match($alpha, $name)) {
+	if (!preg_match($alpha_w_spaceNum, $name)) {
 		echo "<script>
                 window.alert('Name is required and can only alpabetical letters!');
                 history.back(1);

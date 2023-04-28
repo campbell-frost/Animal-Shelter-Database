@@ -4,6 +4,7 @@ include("dbconnect.php");
 $alpha_numeric = "/^[a-zA-Z0-9]+$/";
 $address_regex = "/^[a-zA-Z0-9 ]+$/";
 $alpha_w_space = "/^[a-zA-Z ]+$/";
+$alpha_w_spaceNum= "/^[a-zA-Z0-9\s]+$/";
 $alpha = "/^[a-zA-Z]+$/";
 $numeric = "/^[0-9]+$/";
 $weight = "/^[0-9.]+$/";
@@ -45,21 +46,9 @@ if (isset($_POST['submit'])) {
             history.back(1);
           </script>";
             exit;
-        } else if (!empty($broughtIn) && !preg_match($alpha_numeric, $broughtIn)) {
-            echo "<script>
-            window.alert('BroughtIn can only contain alphabetical characters for citizen name or numerical values for the badge number.');
-            history.back(1);
-          </script>";
-            exit;
         } else if (!isset($dateOfBirth) && !preg_match($numeric, $dateOfBirth)) {
             echo "<script>
             window.alert('Date of birth can only contain alphabetical characters and numerical values.');
-            history.back(1);
-          </script>";
-            exit;
-        } else if (!empty($broughtIn) && !preg_match($numeric, $weight)) {
-            echo "<script>
-            window.alert('Weight can only contain numerical values.');
             history.back(1);
           </script>";
             exit;
@@ -93,7 +82,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($ownerName)) {
+            } else if (empty($ownerName)) {
                 echo "<script>
                 window.alert('Owner name is required!');
                 history.back(1);
@@ -106,20 +95,20 @@ if (isset($_POST['submit'])) {
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($ownerPhone)) {
+            } else if (empty($ownerPhone)) {
                 echo "<script>
                 window.alert('Phone number is required!');
                 history.back(1);
               </script>";
                 exit;
             }
-            if (!preg_match($alpha_numeric, $ownerAddress)) {
+            if (!preg_match($alpha_w_spaceNum, $ownerAddress)) {
                 echo "<script>
                 window.alert('Address can only contain Alphabetical characters and numerical values!');
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($ownerAddress)) {
+            } else if (empty($ownerAddress)) {
                 echo "<script>
                 window.alert('Address is required!');
                 history.back(1);
@@ -132,7 +121,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($ownerCity)) {
+            } else if (empty($ownerCity)) {
                 echo "<script>
                 window.alert('City is required!');
                 history.back(1);
@@ -145,7 +134,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($ownerState)) {
+            } else if (empty($ownerState)) {
                 echo "<script>
                 window.alert('State is required!');
                 history.back(1);
@@ -158,49 +147,27 @@ if (isset($_POST['submit'])) {
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($ownerZip)) {
+            } else if (empty($ownerZip)) {
                 echo "<script>
                 window.alert('Zipcode is required!');
                 history.back(1);
               </script>";
                 exit;
-            } else if (!empty($rabiesVacc)) {
+            } else if (empty($rabiesVacc)) {
                 echo "<script>
                 window.alert('rabiesVacc is required!');
                 history.back(1);
             </script>";
                 exit;
-            } else if (!preg_match($numeric, $rabiesYear)) {
-                echo "<script>
-                window.alert('rabiesYear can only contain numerical values!');
-                history.back(1);
-            </script>";
-                exit;
-            } else if (!empty($rabiesYear)) {
-                echo "<script>
-                window.alert('rabiesYear is required!');
-                history.back(1);
-            </script>";
-                exit;
-            } else if (!empty($distemperVacc)) {
+  
+  
+            } else if (empty($distemperVacc)) {
                 echo "<script>
                 window.alert('distemperVacc is required!');
                 history.back(1);
             </script>";
                 exit;
-            } else if (!preg_match($numeric, $distemperYear)) {
-                echo "<script>
-                window.alert('distemperYear can only contain numerical values!');
-                history.back(1);
-            </script>";
-                exit;
-            } else if (!empty($distemperYear)) {
-                echo "<script>
-                window.alert('distemperYear is required!');
-                history.back(1);
-            </script>";
-                exit;
-            } else if (!empty($spayedNutered)) {
+            } else if (empty($spayedNutered)) {
                 echo "<script>
                 window.alert('spayedNeutered is required!');
                 history.back(1);
@@ -212,7 +179,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
             </script>";
                 exit;
-            } else if (!empty($tagNumber)) {
+            } else if (empty($tagNumber)) {
                 echo "<script>
                 window.alert('Tag number is required!');
                 history.back(1);
@@ -224,7 +191,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
             </script>";
                 exit;
-            } else if (!empty($clinic)) {
+            } else if (empty($clinic)) {
                 echo "<script>
                 window.alert('Clinic is required!');
                 history.back(1);
