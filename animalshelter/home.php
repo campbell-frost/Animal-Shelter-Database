@@ -29,16 +29,16 @@ include("accountType.php");
   </div>
 </main>
 <script>
-document.getElementById("create-account-button").addEventListener("click", function() {
-                window.location.href = "createAccount.php";
-              });
-document.getElementById("login-button").addEventListener("click", function() {
-                window.location.href = "index.php";
-              });
-document.getElementById("logout-button").addEventListener("click", function() {
-                window.location.href = "logout.php";
-              });
+  document.getElementById("create-account-button").addEventListener("click", function () {
+    window.location.href = "createAccount.php";
+  });
+  document.getElementById("login-button").addEventListener("click", function () {
+    window.location.href = "index.php";
+  });
+  document.getElementById("logout-button").addEventListener("click", function () {
+    window.location.href = "logout.php";
+  });
 </script>
 <?php
-	include("footer.php");
+include("footer.php");
 ?>

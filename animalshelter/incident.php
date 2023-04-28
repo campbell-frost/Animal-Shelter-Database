@@ -32,12 +32,12 @@ include("incidentInsert.php");
     <div class="container">
         <div class="incident">
             <form action="incidentInsert.php" method="post">
-			    <!-- Animal Intake Number text field-->
+                <!-- Animal Intake Number text field-->
                 <label>Intake Number:</label><input type="text" name="intakeNumber"><br>
 
                 <!-- Animal Control Officer Badge Number -->
                 <label>ACO Badge Number:</label><input type="text" name="badgeNumber"><br>
-        
+
                 <!-- Current date text field -->
                 <label>Date:</label><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"><br>
 
@@ -45,11 +45,11 @@ include("incidentInsert.php");
                 <label>Time:</label><input type="time" name="time" id="timeInput"><br>
                 <!-- Description of weather when animal is being collected  -->
                 <label>Weather:</label><input type="text" name="weather"><br>
-				<label for="animal_id">Animal Name:</label>
-				<select name="animal_id" id="animal_id">
-				<?php echo $animal_options; ?>
-				</select>
-				<br>
+                <label for="animal_id">Animal Name:</label>
+                <select name="animal_id" id="animal_id">
+                    <?php echo $animal_options; ?>
+                </select>
+                <br>
                 <label>Animal Type:</label>
                 <select name="type">
                     <option value=""></option>
@@ -79,21 +79,21 @@ include("incidentInsert.php");
             </select><br>
             <div id="ownerInfo" style="display:none;">
 
-            <label>Owner Name:</label><input type="text" name="ownerName"><br>
-            <!-- Phone number of animal owner field entered in a textbox -->
-            <label>Phone Number:</label><input type="text" name="phone"><br>
+                <label>Owner Name:</label><input type="text" name="ownerName"><br>
+                <!-- Phone number of animal owner field entered in a textbox -->
+                <label>Phone Number:</label><input type="text" name="phone"><br>
 
-            <!-- Address of animal owner field entered in a textbox -->
-            <label>Address:</label><input type="text" name="address"><br>
+                <!-- Address of animal owner field entered in a textbox -->
+                <label>Address:</label><input type="text" name="address"><br>
 
-            <!-- City of animal owner field entered in a textbox -->
-            <label>City:</label><input type="text" name="city"><br>
+                <!-- City of animal owner field entered in a textbox -->
+                <label>City:</label><input type="text" name="city"><br>
 
-            <!-- State of animal owner field entered in a textbox -->
-            <label>State:</label><input type="text" name="state"><br>
+                <!-- State of animal owner field entered in a textbox -->
+                <label>State:</label><input type="text" name="state"><br>
 
-            <!-- Zipcode of animal owner field entered in a textbox -->
-            <label>Zipcode:</label><input type="text" name="zipcode"><br>
+                <!-- Zipcode of animal owner field entered in a textbox -->
+                <label>Zipcode:</label><input type="text" name="zipcode"><br>
             </div>
         </div>
         <!-- Textbox for the description of the circumstances surrounding when an animal is collected

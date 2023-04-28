@@ -80,7 +80,6 @@ body {
     border: none;
     border-radius: 30px;
     padding: 8px;
-    background-image: url('icons/search.png');
     /* set the path to the icon */
     background-size: 23px 23px;
     /* adjust the size of the icon */
@@ -93,9 +92,7 @@ body {
     padding-left: 40px;
 }
 
-
-
-a{ 
+#pageButton{ 
     text-decoration: none   ;
     border: 3px solid #4CA1AF;
     border-radius: 3px;

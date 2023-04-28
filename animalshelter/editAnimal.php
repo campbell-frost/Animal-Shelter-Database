@@ -6,14 +6,14 @@ session_start();
 include('accountType.php');
 include('dbconnect.php');
 
-    // Define regular expressions to match against user input
-    $alpha_numeric = "/^[a-zA-Z0-9]+$/";
-    $address_regex = "/^[a-zA-Z0-9 ]+$/";
-    $alpha_w_space = "/^[a-zA-Z ]+$/";
-    $alpha = "/^[a-zA-Z]+$/";
-    $numeric = "/^[0-9]+$/";
-    $weight = "/^[0-9.]+$/";
-    $phone = "/^[0-9]{10}$/";
+// Define regular expressions to match against user input
+$alpha_numeric = "/^[a-zA-Z0-9]+$/";
+$address_regex = "/^[a-zA-Z0-9 ]+$/";
+$alpha_w_space = "/^[a-zA-Z ]+$/";
+$alpha = "/^[a-zA-Z]+$/";
+$numeric = "/^[0-9]+$/";
+$weight = "/^[0-9.]+$/";
+$phone = "/^[0-9]{10}$/";
 
 // Check if animal ID is set
 if (isset($_GET['animal_id'])) {
@@ -65,135 +65,106 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $tagnumber = $_POST['TagNumber'];
   $clinic = $_POST['clinic'];
 
-  if(!empty($name) && !preg_match($alpha, $name))
-        {
-            echo "<script>
+  if (!empty($name) && !preg_match($alpha, $name)) {
+    echo "<script>
             window.alert('Animal name can only contain alphabetical characters!');
             history.back(1);
           </script>";
-		    exit;
-        }
-        
-        else if(!empty($breed) && !preg_match($alpha, $breed))
-        {
-            echo "<script>
+    exit;
+  } else if (!empty($breed) && !preg_match($alpha, $breed)) {
+    echo "<script>
             window.alert('Breed can only contain alphabetical characters.');
             history.back(1);
           </script>";
-		    exit;        
-        }
-        else if(!empty($color) && !preg_match($alpha, $color))
-        {
-            echo "<script>
+    exit;
+  } else if (!empty($color) && !preg_match($alpha, $color)) {
+    echo "<script>
             window.alert('Color can only contain alphabetical characters.');
             history.back(1);
           </script>";
-		    exit;
-        }
-        else if(!empty($sex) && !preg_match($alpha, $sex) && strlen($sex) > 1)
-        {
-            echo "<script>
+    exit;
+  } else if (!empty($sex) && !preg_match($alpha, $sex) && strlen($sex) > 1) {
+    echo "<script>
             window.alert('Color can only contain alphabetical characters.');
             history.back(1);
           </script>";
-		    exit;
-        }
-        else if(!empty($broughtIn) && !preg_match($alpha_numeric, $broughtIn))
-        {
-            echo "<script>
+    exit;
+  } else if (!empty($broughtIn) && !preg_match($alpha_numeric, $broughtIn)) {
+    echo "<script>
             window.alert('BroughtIn can only contain alphabetical characters for citizen name or numerical values for the badge number.');
             history.back(1);
           </script>";
-		    exit;        
-        }
-        else if(!empty($broughtIn) && !preg_match($numeric, $weight))
-        {
-            echo "<script>
+    exit;
+  } else if (!empty($broughtIn) && !preg_match($numeric, $weight)) {
+    echo "<script>
             window.alert('Weight can only contain numerical values.');
             history.back(1);
           </script>";
-		    exit;        
-        }
-        else if(!preg_match($alpha, $location))
-        {
-            echo "<script>
+    exit;
+  } else if (!preg_match($alpha, $location)) {
+    echo "<script>
             window.alert('Location can only contain alphabetical characters!');
             history.back(1);
           </script>";
-		    exit;        
-        }
-            else if(!preg_match($alpha, $distempervacc))
-            {
-              echo "<script>
+    exit;
+  } else if (!preg_match($alpha, $distempervacc)) {
+    echo "<script>
                 window.alert('DistemperVacc can only contain yes or no!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            else if(!preg_match($alpha, $rabiesvacc))
-            {
-              echo "<script>
+    exit;
+  } else if (!preg_match($alpha, $rabiesvacc)) {
+    echo "<script>
                 window.alert('Rabiesvacc can only contain yes or no!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            else if(!preg_match($numeric, $rabiesyear) && strlen($rabiesyear) > 4)
-            {
-              echo "<script>
+    exit;
+  } else if (!preg_match($numeric, $rabiesyear) && strlen($rabiesyear) > 4) {
+    echo "<script>
                 window.alert('rabiesYear can only contain 4 numerical values!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            else if(!preg_match($numeric, $distemperYear) && strlen($distemperyear) > 4)
-            {
-              echo "<script>
+    exit;
+  } else if (!preg_match($numeric, $distemperYear) && strlen($distemperyear) > 4) {
+    echo "<script>
                 window.alert('DistemperYear can only contain 4 numerical values!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            else if(!empty($spayedNutered))
-            {
-                echo "<script>
+    exit;
+  } else if (!empty($spayedNutered)) {
+    echo "<script>
                 window.alert('spayedNeutered is required!');
                 history.back(1);
             </script>";
-                exit;
-            }
-            else if(!preg_match($numeric, $tagnumber))
-            {
-                echo "<script>
+    exit;
+  } else if (!preg_match($numeric, $tagnumber)) {
+    echo "<script>
                 window.alert('Tag number can only contain numerical values!');
                 history.back(1);
             </script>";
-                exit;            
-            }
-            else if(!empty($TagNumber))
-            {
-                echo "<script>
+    exit;
+  } else if (!empty($TagNumber)) {
+    echo "<script>
                 window.alert('Tag number is required!');
                 history.back(1);
             </script>";
-                exit;
-            }
-            if(!empty($clinic) && !preg_match($alpha_w_space, $clinic)) 
-            {
-              echo "<script>
+    exit;
+  }
+  if (!empty($clinic) && !preg_match($alpha_w_space, $clinic)) {
+    echo "<script>
                   window.alert('Clinic name can only contain alphabetical characters and spaces!');
                   history.back(1);
               </script>";
-              exit;  
-           }
-           /* else if(!empty($clinic))
-            {
-                echo "<script>
-                window.alert('Clinic is required!');
-                history.back(1);
-            </script>";
-                exit;
-            }*/
+    exit;
+  }
+  /* else if(!empty($clinic))
+  {
+  echo "<script>
+  window.alert('Clinic is required!');
+  history.back(1);
+  </script>";
+  exit;
+  }*/
 
 
   // Update animal information in database
@@ -225,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <h1>Edit Animal</h1>
   <form method="post" action="">
     <div class="button-container">
-	  <a class="uniqueButton" href="viewAnimals.php">Back</a>
+      <a class="uniqueButton" href="viewAnimals.php">Back</a>
       <input class="uniqueButton" type="submit" value="Save">
     </div>
     <br>
@@ -268,11 +239,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="distemperyear">Distemper Year:</label>
         <input type="text" id="distemperyear" name="distemperyear" value="<?php echo $animal['distemperYear']; ?>"><br>
         <label for="spayedneutered">Spayed/Neutered:</label>
-        <input type="text" id="spayedneutered" name="spayedneutered" value="<?php echo $animal['spayedNutered']; ?>"><br>
+        <input type="text" id="spayedneutered" name="spayedneutered"
+          value="<?php echo $animal['spayedNutered']; ?>"><br>
         <label for="tagnumber">Tag Number:</label>
         <input type="text" id="TagNumber" name="TagNumber" value="<?php echo $animal['tagNumber']; ?>"><br>
         <label for="clinic">Clinic:</label>
         <input type="text" id="clinic" name="clinic" value="<?php echo $animal['clinic']; ?>"><br>
       </div>
     </div>
+
 </html>

@@ -3,10 +3,6 @@
 <!-- This code creates a footer section for the webpage -->
 <footer class="footer-container">
   <!-- This code creates a paragraph with contact information for the Indian Animal Lake Shelter -->
-  <p>&copy; 2023 Indian Animal Lake Shelter &bull; thelakeshelter@gmail.com &bull; 905-555-5555 &bull; Copyright @ ScrumMasters</p>
+  <p>&copy; 2023 Indian Animal Lake Shelter &bull; thelakeshelter@gmail.com &bull; 905-555-5555 &bull; Copyright @
+    ScrumMasters</p>
 </footer>
-
-
-
-
-
