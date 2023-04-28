@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <h1>Edit Animal</h1>
   <form method="post" action="">
     <div class="button-container">
-	  <a class="uniqueButton" href="reports.php">Back</a>
+	  <a class="uniqueButton" href="viewAnimals.php">Back</a>
       <input class="uniqueButton" type="submit" value="Save">
     </div>
     <br>

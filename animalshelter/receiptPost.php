@@ -1,14 +1,14 @@
 <?php
 include("dbconnect.php");
 
-    // Define regular expressions to match against user input
-    $alpha_numeric = "/^[a-zA-Z0-9]+$/";
-    $address_regex = "/^[a-zA-Z0-9 ]+$/";
-    $alpha_w_space = "/^[a-zA-Z ]+$/";
-    $alpha = "/^[a-zA-Z]+$/";
-    $numeric = "/^[0-9]+$/";
-    $weight = "/^[0-9.]+$/";
-    $phone = "/^[0-9]{10}$/";
+// Define regular expressions to match against user input
+$alpha_numeric = "/^[a-zA-Z0-9]+$/";
+$address_regex = "/^[a-zA-Z0-9 ]+$/";
+$alpha_w_space = "/^[a-zA-Z ]+$/";
+$alpha = "/^[a-zA-Z]+$/";
+$numeric = "/^[0-9]+$/";
+$weight = "/^[0-9.]+$/";
+$phone = "/^[0-9]{10}$/";
 
 $ownerName = $_POST['name'];
 $ownerPhone = $_POST['phone'];
@@ -17,103 +17,88 @@ $ownerCity = $_POST['city'];
 $ownerState = $_POST['state'];
 $ownerZip = $_POST['zip'];
 
-            if(empty($ownerName))
-            {
-                echo "<script>
+if (empty($ownerName)) {
+    echo "<script>
                 window.alert('Owner name is required!');
                 history.back(1);
                 </script>";
-                exit;
-            }
-            else if(!preg_match($alpha_w_space, $ownerName))
-            {
-                echo "<script>
+    exit;
+} else if (!preg_match($alpha_w_space, $ownerName)) {
+    echo "<script>
                 window.alert('Owner name can only contain alphabetical characters!');
                 history.back(1);
                 </script>";
-                exit;            
-            }
-            if(empty($ownerPhone))
-            {
-                echo "<script>
+    exit;
+}
+if (empty($ownerPhone)) {
+    echo "<script>
                 window.alert('Phone number is required!');
                 history.back(1);
                 </script>";
-                exit;
-            }
-            else if(!preg_match($phone, $ownerPhone))
-            {
-                echo "<script>
+    exit;
+} else if (!preg_match($phone, $ownerPhone)) {
+    echo "<script>
                 window.alert('Phone number can only contain numerical values!');
                 history.back(1);
                 </script>";
-                exit;            
-            }
-            if(empty($ownerAddress))
-            {
-                echo "<script>
+    exit;
+}
+if (empty($ownerAddress)) {
+    echo "<script>
                 window.alert('Address is required!');
                 history.back(1);
                 </script>";
-                exit;
-            }
-            else if(!preg_match($address_regex, $ownerAddress))
-            {
-                echo "<script>
+    exit;
+} else if (!preg_match($address_regex, $ownerAddress)) {
+    echo "<script>
                 window.alert('Address can only contain alphabetical characters and numerical values!');
                 history.back(1);
                 </script>";
-                exit;            
-            }
-            if(!preg_match($alpha, $ownerCity))
-            {
-                echo "<script>
+    exit;
+}
+if (!preg_match($alpha, $ownerCity)) {
+    echo "<script>
                 window.alert('City can only contain alphabetical characters!');
                 history.back(1);
               </script>";
-                exit;            
-            }
-            if(empty($ownerCity))
-            {
-                echo "<script>
+    exit;
+}
+if (empty($ownerCity)) {
+    echo "<script>
                 window.alert('City is required!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            if(!preg_match($alpha, $ownerState) && strlen($ownerState) > 2)
-            {
-                echo "<script>
+    exit;
+}
+if (!preg_match($alpha, $ownerState) && strlen($ownerState) > 2) {
+    echo "<script>
                 window.alert('State can only contain alphabetical characters!');
                 history.back(1);
               </script>";
-                exit;            
-            }
-            if(empty($ownerState))
-            {
-                echo "<script>
+    exit;
+}
+if (empty($ownerState)) {
+    echo "<script>
                 window.alert('State is required!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            if(!preg_match($numeric, $ownerZip))
-            {
-                echo "<script>
+    exit;
+}
+if (!preg_match($numeric, $ownerZip)) {
+    echo "<script>
                 window.alert('Zipcode can only contain numerical values!');
                 history.back(1);
               </script>";
-                exit;            
-            }
-            if(empty($ownerZip))
-            {
-                echo "<script>
+    exit;
+}
+if (empty($ownerZip)) {
+    echo "<script>
                 window.alert('Zipcode is required!');
                 history.back(1);
               </script>";
-                exit;
-            }
-            
+    exit;
+}
+
 
 // Insert owner information into the owner table
 $insertOwnerQuery = "INSERT INTO owner (name, phone, address, city, state, zip) VALUES ('$ownerName', '$ownerPhone', '$ownerAddress', '$ownerCity', '$ownerState', '$ownerZip')";
@@ -143,5 +128,5 @@ if (isset($_POST['submitTotalRecovery'])) {
 }
 ?>
 <script>
-	location.href = "reports.php";
+    location.href = "reports.php";
 </script>

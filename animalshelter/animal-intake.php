@@ -122,7 +122,6 @@ include("accountType.php");
     <div id="ownerInfo" style="display:none;">
         <label>Owner Name:</label><input type="text" name="ownerName"><br>
         <label>Phone:</label><input type="text" name="phone"><br>
-        <label>Email:</label><input type="text" name="email"><br>
         <label>Address:</label><input type="text" name="address"><br>
         <label>City:</label><input type="text" name="city"><br>
         <label>State:</label><input type="text" name="state"><br>
