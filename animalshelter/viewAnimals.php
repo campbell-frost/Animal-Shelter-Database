@@ -1,26 +1,35 @@
 <?php
+// Start a session
 session_start();
+
+// Include database connection file
 include("dbconnect.php");
+
+// Include account type file
 include("accountType.php");
 
+// Select data from tables animal and owner
 $sql = "SELECT animal.animal_ID, animal.name, animal.type, animal.dateOfBirth, animal.sex, animal.breed, animal.color, animal.weight, animal.altered, animal.microchip, animal.spayedNutered, animal.tagNumber, disposition_ID, owner.name AS owner_name, IF((SELECT COUNT(*) FROM disposition WHERE disposition.animal_ID = animal.animal_ID AND disposition.disposition_id IS NOT NULL) > 0, 'Yes', 'No') AS disposed
             FROM animal
             LEFT JOIN owner 
             ON animal.owner_ID = owner.owner_ID";
 
-
+// Execute the SQL query and store the results
 $results = mysqli_query($dbconnection, $sql);
 
+// If the query fails, display the error message
 if (!$results) {
     die("Query failed: " . mysqli_error($dbconnection));
 }
 
+// If no data is returned from the first query, execute a second query to get data for animals without owners
 if (mysqli_num_rows($results) === 0) {
     $sql2 = "SELECT animal_ID, name, type, dateOfBirth, sex, breed, color, weight, altered, microchip, spayedNutered, tagNumber, disposition_ID 
              FROM animal 
              WHERE owner_ID IS NULL";
     $results2 = mysqli_query($dbconnection, $sql2);
 
+    // If the second query fails, display the error message
     if (!$results2) {
         die("Query failed: " . mysqli_error($dbconnection));
     }
@@ -108,5 +117,5 @@ if (mysqli_num_rows($results) === 0) {
                 </tr>
             <?php } ?>
         
-        </tbody>
-    </table>
+    </tbody>
+</table>

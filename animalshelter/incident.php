@@ -2,23 +2,30 @@
 session_start();
 include("accountType.php");
 include("incidentInsert.php");
+
 ?>
 <script>
+	//Gets the current time 
     var timeInput = document.getElementById("timeInput")
     var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     timeInput.value = currentTime;
-
-
-    function showOwnerInfo() {
-        var hasOwner = document.getElementById("hasOwner");
-        var ownerInfo = document.getElementById("ownerInfo");
-        if (hasOwner.value == "Yes") {
-            ownerInfo.style.display = "block";
-        } else {
-            ownerInfo.style.display = "none";
-        }
-    }
-
+	//Function For Displaying Owner Information 
+	function showOwnerInfo() 
+	{
+		// Get the hasOwner and ownerInfo elements from the HTML document
+		var hasOwner = document.getElementById("hasOwner");
+		var ownerInfo = document.getElementById("ownerInfo");
+		// If the user selects "Yes" for hasOwner, show the ownerInfo element
+		if (hasOwner.value == "Yes")
+		{
+			ownerInfo.style.display = "block";
+		} 
+		// Otherwise, hide the ownerInfo element
+		else
+		{
+			ownerInfo.style.display = "none";
+		}
+	}
 </script>
 <link rel="stylesheet" type="text/css" href="StyleSheets/incidentReport.css?v=8">
 <html>

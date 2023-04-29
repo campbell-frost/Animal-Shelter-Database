@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
           </script>";
             exit;
         }
-        if (!empty($weather) && !preg_match($alpha, $weather)) {
+        if (!empty($weather) && !preg_match($alpha_w_space, $weather)) {
             echo "<script>
             window.alert('Weather can only contain alphabetical characters.');
             history.back(1);
@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
                 </script>";
                 exit;
-            } else if (!empty($ownerAddress)) {
+            } else if (empty($ownerAddress)) {
                 echo "<script>
                 window.alert('Address is required!');
                 history.back(1);
@@ -137,39 +137,28 @@ if (isset($_POST['submit'])) {
                 history.back(1);
                 </script>";
                 exit;
-            } else if (!empty($ownerCity)) {
+            } else if (empty($ownerCity)) {
                 echo "<script>
                 window.alert('City is required!');
                 history.back(1);
                 </script>";
                 exit;
             }
-            if (!preg_match($numeric, $ownerState)) {
+            if (!preg_match($alpha, $ownerState)) {
                 echo "<script>
                 window.alert('State can only contain alphabetical characters!');
                 history.back(1);
                 </script>";
                 exit;
-            } else if (!empty($ownerState)) {
+            } else if (empty($ownerState)) {
                 echo "<script>
                 window.alert('State is required!');
                 history.back(1);
                 </script>";
                 exit;
-            }
-            if (!preg_match($numeric, $ownerZip)) {
-                echo "<script>
-                window.alert('Zipcode can only contain numerical values!');
-                history.back(1);
-                </script>";
-                exit;
-            } else if (!empty($ownerZip)) {
-                echo "<script>
-                window.alert('Zipcode is required!');
-                history.back(1);
-                </script>";
-                exit;
-            }
+            
+     
+			}
 
             // Insert owner information into the owner table
             $insertOwnerQuery = "INSERT INTO owner (name, phone, address, city, state, zip) VALUES ('$ownerName', '$ownerPhone', '$ownerAddress', '$ownerCity', '$ownerState', '$ownerZip')";

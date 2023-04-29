@@ -115,7 +115,7 @@ if (isset($_POST['submit'])) {
               </script>";
                 exit;
             }
-            if (!preg_match($alpha, $ownerCity)) {
+            if (!preg_match($alpha_w_space, $ownerCity)) {
                 echo "<script>
                 window.alert('City can only contain alphabetical characters!');
                 history.back(1);
@@ -185,7 +185,7 @@ if (isset($_POST['submit'])) {
                 history.back(1);
             </script>";
                 exit;
-            } else if (!preg_match($alpha, $clinic)) {
+            } else if (!preg_match($alpha_w_spaceNum, $clinic)) {
                 echo "<script>
                 window.alert('Clinic can only contain alphabetical characters!');
                 history.back(1);

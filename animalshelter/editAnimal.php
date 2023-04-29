@@ -6,6 +6,7 @@ session_start();
 include('accountType.php');
 include('dbconnect.php');
 
+
 // Define regular expressions to match against user input
 $alpha_numeric = "/^[a-zA-Z0-9]+$/";
 $address_regex = "/^[a-zA-Z0-9 ]+$/";
@@ -65,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $tagnumber = $_POST['TagNumber'];
   $clinic = $_POST['clinic'];
 
-  if (!empty($name) && !preg_match($alpha, $name)) {
+  if (!empty($name) && !preg_match($alpha_w_space, $name)) {
     echo "<script>
             window.alert('Animal name can only contain alphabetical characters!');
             history.back(1);
@@ -157,16 +158,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </script>";
     exit;
   }
-  /* else if(!empty($clinic))
-  {
-  echo "<script>
-  window.alert('Clinic is required!');
-  history.back(1);
-  </script>";
-  exit;
-  }*/
-
-
   // Update animal information in database
   $query = "UPDATE animal SET Name = '$name', Type = '$type', Date = '$date', DateOfBirth = '$dob', Sex = '$sex', Breed = '$breed', Color = '$color', Weight = '$weight', Altered = '$altered', Microchip = '$microchip', Broughtin = '$broughtin', Location = '$location', RabiesVacc = '$rabiesvacc', RabiesYear = '$rabiesyear', DistemperVacc = '$distempervacc', DistemperYear = '$distemperyear', SpayedNutered = '$spayedneutered', TagNumber = '$tagnumber', Clinic = '$clinic'  WHERE Animal_ID = $animal_id";
   $result = mysqli_query($dbconnection, $query);
@@ -196,13 +187,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <h1>Edit Animal</h1>
   <form method="post" action="">
     <div class="button-container">
-      <a class="uniqueButton" href="viewAnimals.php">Back</a>
+      <a class="uniqueButton linkButton" href="viewAnimals.php">Back</a>
       <input class="uniqueButton" type="submit" value="Save">
     </div>
     <br>
     <div class="container">
       <div class="container1">
-
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<?php echo $animal['name']; ?>"><br>
         <label for="type">Type:</label>

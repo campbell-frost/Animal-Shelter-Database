@@ -6,8 +6,8 @@ $id = $_GET['id'];
 
 // Retrieve the animal's information from the database
 $sql = "SELECT * FROM animal WHERE animalID = $id";
-$result = $dbconnection->query($sql);
-$row = $result->fetch_assoc();
+$result = mysqli_query($dbconnection, $sql);
+$row = mysqli_fetch_assoc($reusult);
 
 // If the user has submitted the form, update the animal's information in the database
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

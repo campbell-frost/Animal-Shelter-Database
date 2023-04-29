@@ -3,6 +3,7 @@
 include('dbconnect.php');
 session_start();
 include('accountType.php');
+
 if (!$dbconnection) {
 	die("Connection failed: " . mysqli_connect_error());
 }
@@ -47,11 +48,14 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 <head>
 	<link rel='stylesheet' href='StyleSheets/reports.css?v=2'>
 </head>
+<h1>Reports</h1>
 <h2>Incident reports</h2>
+<!--prints rows of results while there are still more rows -->
 <?php if (mysqli_num_rows($incident_result) > 0) { ?>
 	<table>
 		<thead>
 			<tr>
+				<!-- table headers -->
 				<th>Intake Number</th>
 				<th>Badge Number</th>
 				<th>Date</th>
@@ -61,6 +65,7 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 			</tr>
 		</thead>
 		<tbody>
+			<!-- Fetches data from query results -->
 			<?php while ($row = mysqli_fetch_assoc($incident_result)) { ?>
 				<tr>
 					<td>
@@ -84,9 +89,13 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 				</tr>
 			<?php } ?>
 		</tbody>
+	<?php } else { ?>
+		<p>No incident reports have been filed!</p>
 	<?php } ?>
 </table>
+<!-- Table header for adopted / reclaimed -->
 <h2>Adopted / Reclaimed Animals</h2>
+<!--prints rows of results while there are still more rows -->
 <?php if (mysqli_num_rows($adopted_result) > 0) { ?>
 	<table>
 		<thead>
@@ -103,6 +112,7 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 			</tr>
 		</thead>
 		<tbody>
+			<!-- Fetches data from query results -->
 			<?php while ($row = mysqli_fetch_assoc($adopted_result)) { ?>
 				<tr>
 					<td>
@@ -140,9 +150,7 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 	<?php } ?>
 </table>
 <h2>Euthanized Animals</h2>
-
-
-
+<!--prints rows of results while there are still more rows -->
 <?php if (mysqli_num_rows($euthanized_result) > 0) { ?>
 	<table>
 		<thead>
@@ -159,6 +167,7 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 			</tr>
 		</thead>
 		<tbody>
+			<!-- Fetches data from query results -->
 			<?php while ($row = mysqli_fetch_assoc($euthanized_result)) { ?>
 				<tr>
 					<td>
@@ -196,6 +205,7 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 	<p>No animals have been euthanized!</p>
 <?php } ?>
 <h2>Auctioned Animals</h2>
+<!--prints rows of results while there are still more rows -->
 <?php if (mysqli_num_rows($auction_result) > 0) { ?>
 
 	<table>
@@ -213,6 +223,7 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 			</tr>
 		</thead>
 		<tbody>
+			<!-- Fetches data from query results -->
 			<?php while ($row = mysqli_fetch_assoc($auction_result)) { ?>
 				<tr>
 					<td>
@@ -250,35 +261,33 @@ $fee_result = mysqli_query($dbconnection, $fee_query);
 	<p>No animals have been auctioned!</p>
 <?php } ?>
 <h2>Fee Receipts</h2>
+<!--prints rows of results while there are still more rows -->
 <?php if (mysqli_num_rows($fee_result) > 0) { ?>
-<table>
-	<thead>
-		<tr>
-			<th>Fee ID</th>
-			<th>Total</th>
-			<th>Owner ID</th>
-			<th>Owner Name</th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php while ($row = mysqli_fetch_assoc($fee_result)) { ?>
+	<table>
+		<thead>
 			<tr>
-				<td>
-					<?php echo $row['fee_ID']; ?>
-				</td>
-				<td>
-					<?php echo $row['total']; ?>
-				</td>
-				<td>
-					<?php echo $row['owner_ID']; ?>
-				</td>
-				<td>
-					<?php echo $row['name']; ?>
-				</td>
+				<th>Fee ID</th>
+				<th>Total</th>
+				<th>Owner Name</th>
 			</tr>
-		<?php } ?>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			<!-- Fetches data from query results -->
+			<?php while ($row = mysqli_fetch_assoc($fee_result)) { ?>
+				<tr>
+					<td>
+						<?php echo $row['fee_ID']; ?>
+					</td>
+					<td>
+						<?php echo $row['total']; ?>
+					</td>
+					<td>
+						<?php echo $row['name']; ?>
+					</td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
 <?php } else { ?>
-<p>No Fees yet!</p>
+	<p>No Fees yet!</p>
 <?php } ?>

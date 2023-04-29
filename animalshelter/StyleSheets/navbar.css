@@ -114,13 +114,13 @@ ul
     
 }
 
-li {
+li a{
     list-style-type: none;
     float: left;
     margin: 0 45px;
     width: auto;
 }
-li a 
+li 
 {
     width: 100%;
     list-style-type: none;

@@ -9,7 +9,7 @@ $alpha = "/^[a-zA-Z]+$/";
 $numeric = "/^[0-9]+$/";
 $weight = "/^[0-9.]+$/";
 $phone = "/^[0-9]{10}$/";
-
+//Get Owner Information Using POST Method
 $ownerName = $_POST['name'];
 $ownerPhone = $_POST['phone'];
 $ownerAddress = $_POST['address'];
@@ -56,7 +56,7 @@ if (empty($ownerAddress)) {
                 </script>";
     exit;
 }
-if (!preg_match($alpha, $ownerCity)) {
+if (!preg_match($alpha_w_space, $ownerCity)) {
     echo "<script>
                 window.alert('City can only contain alphabetical characters!');
                 history.back(1);

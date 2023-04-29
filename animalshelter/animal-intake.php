@@ -1,8 +1,8 @@
 <?php
 session_start();
 include("accountType.php");
+
 ?>
-<link rel="stylesheet" type="text/css" href="StyleSheets/animalIntake.css?v=7">
 <script>
     // This function shows or hides the owner information section based on the value of the "hasOwner" field
     function showOwnerInfo() {
@@ -51,6 +51,8 @@ include("accountType.php");
 </script>
 
 <h1>Animal Intake</h1>  
+<link rel="stylesheet" type="text/css" href="StyleSheets/animalIntake.css?v=7">
+
 <form action="animalIntakePost.php" method="post">
     <br>
 
@@ -108,7 +110,6 @@ include("accountType.php");
     <!-- Location of animal field entered in a textbox which the text below indicates 
             the desired input if animal is housed at the animal shelter or off-site -->
     <label>Location:</label><input type="text" name="location">
-    <p>(Shelter Cage number or Veterinarian number if animal is housed off-site)</p><br>
 
 
     <!-- Field indicating whether animal has an owner which is entered in a textbox -->

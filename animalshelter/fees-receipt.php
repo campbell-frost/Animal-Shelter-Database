@@ -1,11 +1,11 @@
 <?php
 session_start();
 include("accountType.php");
+
 ?>
 <html>
 <link rel="stylesheet" type="text/css" href="StyleSheets/fees-receipt.css?v=5">
 <form action="receiptPost.php" method="post">
-
 	<body>
 		<h1>Fees Receipt</h1>
 		<!-- Field indicating whether animal has an owner which is entered in a textbox -->
@@ -44,40 +44,39 @@ include("accountType.php");
 				<label>Zip:</label><input type="text" name="zip"><br>
 			</div>
 		</div>
-		<script>
+<script>
+	const ADOPTION_FEE = 85; // per animal
 
-			const ADOPTION_FEE = 85; // per animal
+	// function to calculate total Recovery fee
+	function calculateTotalRecovery() {
+		const dogOrCat = document.getElementById("dogOrCat").value.trim();
+		const noRabiesProof = document.getElementById("noRabiesProof").value.trim();
+		const unaltered = document.getElementById("unaltered").value.trim();
+		let totalFee = 0;
 
-			// function to calculate total adoption fee
-			function calculateTotalRecovery() {
-				const dogOrCat = document.getElementById("dogOrCat").value.trim();
-				const noRabiesProof = document.getElementById("noRabiesProof").value.trim();
-				const unaltered = document.getElementById("unaltered").value.trim();
-				let totalFee = 0;
+		if (dogOrCat !== "") {
+			totalFee += 25;
+		}
 
-				if (dogOrCat !== "") {
-					totalFee += 25;
-				}
+		if (noRabiesProof !== "") {
+			totalFee += 10;
+		}
 
-				if (noRabiesProof !== "") {
-					totalFee += 10;
-				}
+		if (unaltered !== "") {
+			totalFee += 25;
+		}
 
-				if (unaltered !== "") {
-					totalFee += 25;
-				}
+		const total = "$" + totalFee;
+		document.getElementById("totalRecoveryFee").value = totalFee;
+	}
+	//function to calculate total Adoption Fee
+	function calculateTotalAdopted() {
+		const numAnimals = document.getElementById("numAnimals").value;
+		const baseFee = 85;
+		const totalFee = baseFee * numAnimals;
+		const total = "$" + totalFee;
+		document.getElementById("totalAdoptionFee").value = totalFee;
+	}
 
-				const total = "$" + totalFee;
-				document.getElementById("totalRecoveryFee").value = totalFee;
-			}
-
-			function calculateTotalAdopted() {
-				const numAnimals = document.getElementById("numAnimals").value;
-				const baseFee = 85;
-				const totalFee = baseFee * numAnimals;
-				const total = "$" + totalFee;
-				document.getElementById("totalAdoptionFee").value = totalFee;
-			}
-
-			document.getElementById("numAnimals").addEventListener("input", calculateTotalAdopted);
-		</script>
+	document.getElementById("numAnimals").addEventListener("input", calculateTotalAdopted);
+</script>
